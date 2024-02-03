@@ -1,0 +1,50 @@
+.formation {
+  grid-template-columns: 1fr 1fr;
+  background-color: #0f0f0f;
+  column-gap: 40px;
+  padding: 100px;
+  display: grid;
+  row-gap: 0px;
+}
+
+.formation h2 {
+  grid-column: span 2;
+  text-align: end;
+}
+
+.box {
+  margin: 64px 0px 32px 0px;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.box hr {
+  flex: 1;
+  border: none;
+  border-top: 2px solid #151515;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.box img {
+  width: 14px;
+}
+
+.formation p {
+  margin: 0px 0px 8px 22px;
+}
+
+.container {
+  justify-content: space-between;
+  display: flex;
+}
+
+.course-hour {
+  text-align: right;
+}
+
+.img-container {
+  display: flex;
+  padding: 64px;
+}

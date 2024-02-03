@@ -1,0 +1,106 @@
+.home {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1160px;
+}
+
+header {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 20px;
+  gap: 16px;
+}
+
+.header-menu {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 52px;
+}
+
+header a {
+  display: inline-block;
+  font-weight: normal;
+  padding: 16px 0px;
+}
+
+header a:hover {
+  color: #ee7ca4;
+}
+
+#logo {
+  width: 52px;
+}
+
+#typing-title {
+  animation: typing 2s steps(12, end), blink-caret 0.75s infinite;
+  border-right: 16px solid #f2f2f2;
+  margin: 100px 0px 100px 0px;
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: bold;
+  overflow: hidden;
+  font-size: 140px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 860px;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #f2f2f2;
+  }
+}
+
+.button {
+  background-color: #ee7ca4;
+  display: inline-block;
+  text-align: center;
+  padding: 16px 32px;
+  color: #450015;
+  margin-top: 16px;
+}
+
+.button:hover {
+  background-color: #450015;
+  color: #ffc5da;
+}
+
+@media (max-width: 900px) {
+  #typing-title {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-menu {
+    gap: 16px;
+  }
+
+  .header-menu a {
+    background-color: #373737;
+    border-radius: 4px;
+    padding: 16px 20px;
+  }
+
+  #typing-title {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  #typing-title {
+    font-size: 60px;
+  }
+}

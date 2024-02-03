@@ -1,0 +1,45 @@
+#about {
+  grid-template-columns: 1fr 1fr;
+  background-color: #f2f2f2;
+  margin: 200px 0px;
+  color: #1e1e1e;
+  display: grid;
+}
+
+.introduction {
+  padding: 128px 100px 0px 100px;
+}
+
+.introduction img {
+  margin-bottom: 20px;
+  width: 32px;
+}
+
+#portrait {
+  border-bottom: 4px solid #e2527d;
+}
+
+@media (max-width: 1050px) {
+  .introduction {
+    padding: 52px;
+  }
+}
+
+@media (max-width: 900px) {
+  #portrait {
+    border-bottom: 5px solid #e2527d;
+    object-fit: cover;
+    height: 99%;
+  }
+}
+
+@media (max-width: 500px) {
+  #portrait {
+    grid-column: span 2;
+  }
+
+  .introduction {
+    grid-column: span 2;
+    padding: 64px 20px;
+  }
+}
