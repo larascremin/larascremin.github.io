@@ -17,6 +17,12 @@
 
 #portrait {
   border-bottom: 4px solid #e2527d;
+  filter: grayscale(100%);
+  transition: 0.2s;
+}
+
+#portrait:hover {
+  filter: grayscale(0%);
 }
 
 @media (max-width: 1050px) {
