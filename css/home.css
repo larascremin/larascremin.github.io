@@ -26,31 +26,21 @@ header a {
 }
 
 header a:hover {
-  color: #ee7ca4;
+  color: #f05180;
 }
 
 #logo {
   width: 52px;
 }
 
-#typing-title {
-  animation: typing 2s steps(12, end), blink-caret 0.75s infinite;
-  border-right: 16px solid #f2f2f2;
-  margin: 100px 0px 100px 0px;
+#title {
+  animation: blink-caret 0.75s infinite;
+  border-right: 16px solid #e1e1e1;
+  margin: 20vh 0vh;
   display: inline-block;
   white-space: nowrap;
   font-weight: bold;
-  overflow: hidden;
-  font-size: 140px;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 860px;
-  }
+  font-size: 10vw;
 }
 
 @keyframes blink-caret {
@@ -59,28 +49,22 @@ header a:hover {
     border-color: transparent;
   }
   50% {
-    border-color: #f2f2f2;
+    border-color: #e1e1e1;
   }
 }
 
 .button {
-  background-color: #ee7ca4;
+  background-color: #f05180;
   display: inline-block;
   text-align: center;
   padding: 16px 32px;
-  color: #450015;
+  color: #340010;
   margin-top: 16px;
 }
 
 .button:hover {
-  background-color: #450015;
+  background-color: #340010;
   color: #ffc5da;
-}
-
-@media (max-width: 900px) {
-  #typing-title {
-    font-size: 100px;
-  }
 }
 
 @media (max-width: 700px) {
@@ -91,16 +75,6 @@ header a:hover {
   .header-menu a {
     background-color: #373737;
     border-radius: 4px;
-    padding: 16px 20px;
-  }
-
-  #typing-title {
-    font-size: 80px;
-  }
-}
-
-@media (max-width: 600px) {
-  #typing-title {
-    font-size: 60px;
+    padding: 16px 16px;
   }
 }

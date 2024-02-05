@@ -1,8 +1,9 @@
 .formation {
   grid-template-columns: 1fr 1fr;
-  background-color: #0f0f0f;
+  background-color: #161616;
+  margin: 200px 0px;
   column-gap: 40px;
-  padding: 100px;
+  padding: 128px 100px;
   display: grid;
   row-gap: 0px;
 }
@@ -10,6 +11,11 @@
 .formation h2 {
   grid-column: span 2;
   text-align: end;
+}
+
+.formation p {
+  padding: 4px 22px;
+  color: #c3c3c3;
 }
 
 .box {
@@ -22,17 +28,13 @@
 .box hr {
   flex: 1;
   border: none;
-  border-top: 2px solid #151515;
+  border-top: 2px solid #1e1e1e;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .box img {
-  width: 14px;
-}
-
-.formation p {
-  margin: 0px 0px 8px 22px;
+  width: 16px;
 }
 
 .container {
@@ -44,7 +46,39 @@
   text-align: right;
 }
 
-.img-container {
+.icons-container {
   display: flex;
-  padding: 64px;
+  gap: 80px 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  place-content: center;
+  padding: 100px;
+}
+
+.icons-container img {
+  height: 100px;
+}
+
+@media (max-width: 1200px) {
+  .icons-container {
+    padding: 20px;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .formation {
+    padding: 40px;
+  }
+
+  .formation-content {
+    grid-column: span 2;
+    max-width: 400px;
+    word-wrap: break-word;
+  }
+
+  .icons-container {
+    width: 300px;
+    margin: 32px;
+  }
 }

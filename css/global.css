@@ -15,7 +15,7 @@
 body {
   font-family: "Inter", Arial, sans-serif;
   background-color: #1e1e1e;
-  color: #f2f2f2;
+  color: #e1e1e1;
   margin: 0px;
 }
 
@@ -54,16 +54,15 @@ a {
 
 .subtitle {
   margin-bottom: 52px;
-  color: #767676;
+  color: #555555;
   font-size: 14px;
 }
 
 span {
   margin-right: 4px;
-  font-weight: bold;
-  color: #ee7ca4;
 }
 
-h2 {
-  color: #ee7ca4;
+h2,
+span {
+  color: #f05180;
 }

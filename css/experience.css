@@ -9,13 +9,13 @@
 }
 
 .content {
-  background-color: #0f0f0f;
+  background-color: #161616;
   border-radius: 4px;
   padding: 52px;
 }
 
 hr {
-  border: 1px solid #151515;
+  border: 1px solid #1e1e1e;
   margin: -20px 0px 20px 0px;
 }
 
@@ -29,17 +29,17 @@ hr {
 }
 
 .experience a {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  background-color: #e26b95;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  background-color: #f05180;
   margin: -52px 0px 0px 16px;
   display: inline-block;
   position: absolute;
   padding: 8px 16px;
-  color: #450015;
+  color: #340010;
 }
 
 .experience a:hover {
-  background-color: #450015;
+  background-color: #340010;
   color: #ffc5da;
 }
 
@@ -47,10 +47,15 @@ hr {
   .experience {
     gap: 32px;
   }
+
+  .content {
+    padding: 20px;
+  }
 }
 
 @media (max-width: 700px) {
   .content {
     grid-column: span 2;
+    margin: 20px;
   }
 }

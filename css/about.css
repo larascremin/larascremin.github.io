@@ -1,22 +1,22 @@
 #about {
   grid-template-columns: 1fr 1fr;
-  background-color: #f2f2f2;
+  background-color: #e1e1e1;
   margin: 200px 0px;
   color: #1e1e1e;
   display: grid;
 }
 
 .introduction {
-  padding: 128px 100px 0px 100px;
+  padding: 200px 128px 0px 128px;
 }
 
 .introduction img {
   margin-bottom: 20px;
-  width: 32px;
+  width: 40px;
 }
 
 #portrait {
-  border-bottom: 4px solid #e2527d;
+  border-bottom: 4px solid #f05180;
   filter: grayscale(100%);
   transition: 0.2s;
 }
@@ -25,21 +25,23 @@
   filter: grayscale(0%);
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1200px) {
   .introduction {
-    padding: 52px;
+    padding: 40px;
   }
 }
 
 @media (max-width: 900px) {
   #portrait {
-    border-bottom: 5px solid #e2527d;
     object-fit: cover;
-    height: 99%;
+  }
+
+  .introduction {
+    padding: 16px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   #portrait {
     grid-column: span 2;
   }
