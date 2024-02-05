@@ -1,63 +1,97 @@
 .decoration-light {
-    height: 10px;
-    background-color: #767676;
+  height: 10px;
+  background-color: #767676;
 }
 
 .decoration-dark {
-    height: 10px;
-    background-color: #373737;
+  height: 10px;
+  background-color: #373737;
 }
 
 .footer {
-    background-color: #F2F2F2;
-    color: #1E1E1E;
-    padding: 64px 100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  background-color: #f2f2f2;
+  color: #1e1e1e;
+  padding: 64px 100px;
+}
+
+.above-line {
+  text-align: center;
+}
+
+.bellow-line {
+  display: flex;
+  margin: 32px 20px;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
 }
 
 .footer-buttons a {
-    display: inline-block;
-    background-color: #C3C3C3;
-    color:#1E1E1E;
-    width: 180px;
-    height: 52px;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    margin-bottom: 20px;
-    transition: 0.2s;
+  display: inline-block;
+  background-color: #c3c3c3;
+  color: #1e1e1e;
+  width: 180px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 20px 100px 20px;
+  transition: 0.2s;
 }
 
 .footer-buttons a:hover {
-    background-color: #EE7CA4;
-    color: #450015;
-}
-
-.footer h3 {
-    margin-bottom: 16px;
+  background-color: #f05180;
+  color: #340010;
 }
 
 .footer p {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
+}
+
+.footer-list {
+  margin-right: 200px;
+}
+
+.footer hr {
+  border: 1px solid #c3c3c3;
+}
+
+.footer-contact p {
+  margin: 10px 0px;
+}
+
+.footer-list a {
+  margin: 10px 0px;
+  display: inline-block;
+  font-weight: normal;
+}
+
+.footer-list a:hover {
+  color: #f05180;
 }
 
 .icons-box {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 .icons-box img {
-    width: 40px;
+  width: 40px;
+  margin: 16px 0px;
 }
 
 .icons-box img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-#footer {
-    grid-column: span 3;
-    text-align: center;
-    margin: 64px 0px -40px 0px;
-    color: #767676;
+@media (max-width: 800px) {
+  .footer {
+    padding: 64px 20px;
+  }
+
+  .footer-list {
+    margin-right: 40px;
+  }
 }

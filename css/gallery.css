@@ -26,3 +26,9 @@
 #two {
   grid-column: span 2;
 }
+
+@media (max-width: 800px) {
+  .gallery {
+    padding: 80px 20px;
+  }
+}
