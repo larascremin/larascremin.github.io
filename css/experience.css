@@ -59,3 +59,9 @@ hr {
     margin: 20px;
   }
 }
+
+@media (max-width: 500px) {
+  .experience h2 {
+    text-align: center;
+  }
+}

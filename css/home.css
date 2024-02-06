@@ -36,7 +36,7 @@ header a:hover {
 #title {
   animation: blink-caret 0.75s infinite;
   border-right: 16px solid #e1e1e1;
-  margin: 20vh 0vh;
+  margin: 18vh 0vh;
   display: inline-block;
   white-space: nowrap;
   font-weight: bold;
@@ -76,5 +76,15 @@ header a:hover {
     background-color: #373737;
     border-radius: 4px;
     padding: 16px 16px;
+  }
+
+  #title {
+    border-right: 8px solid #e1e1e1;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-menu a {
+    padding: 12px 12px;
   }
 }

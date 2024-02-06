@@ -42,12 +42,16 @@
 }
 
 @media (max-width: 800px) {
+  #about {
+    margin-bottom: 100px;
+  }
+
   #portrait {
     grid-column: span 2;
   }
 
   .introduction {
     grid-column: span 2;
-    padding: 64px 20px;
+    padding: 100px 20px;
   }
 }
