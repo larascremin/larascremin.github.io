@@ -66,3 +66,9 @@ h2,
 span {
   color: #f05180;
 }
+
+@media (max-width: 500px) {
+  body h2 {
+    font-size: 1.3rem;
+  }
+}

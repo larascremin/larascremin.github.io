@@ -88,10 +88,17 @@
 
 @media (max-width: 800px) {
   .footer {
-    padding: 64px 20px;
+    padding: 64px 16px;
   }
 
   .footer-list {
     margin-right: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer p,
+  a {
+    font-size: 0.8rem;
   }
 }

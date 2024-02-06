@@ -73,8 +73,6 @@
 
   .formation-content {
     grid-column: span 2;
-    max-width: 400px;
-    word-wrap: break-word;
   }
 
   .icons-container {
@@ -90,5 +88,18 @@
 @media (max-width: 500px) {
   .formation p {
     font-size: 0.8rem;
+  }
+
+  .formation {
+    padding: 60px 8px;
+  }
+
+  .icons-container {
+    width: 200px;
+  }
+
+  .icons-container img {
+    width: 60px;
+    height: auto;
   }
 }
