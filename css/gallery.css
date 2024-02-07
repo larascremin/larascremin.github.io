@@ -1,17 +1,17 @@
 .gallery {
-  max-width: 1160px;
-  margin-right: auto;
-  margin-left: auto;
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 20px;
   padding: 240px 20px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1160px;
+  display: grid;
+  gap: 20px;
 }
 
 .gallery img {
-  border-radius: 4px;
   filter: grayscale(100%);
+  border-radius: 4px;
   transition: 0.2s;
 }
 

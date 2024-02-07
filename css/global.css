@@ -23,14 +23,9 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6,
-p {
-  margin: 0px;
-}
-
 p {
   line-height: 1.5;
+  margin: 0px;
 }
 
 ul {
@@ -58,13 +53,19 @@ a {
   font-size: 14px;
 }
 
-span {
-  margin-right: 4px;
-}
-
-h2,
+.comment,
 span {
   color: #f05180;
+}
+
+#decoration-light {
+  height: 10px;
+  background-color: #767676;
+}
+
+#decoration-dark {
+  height: 10px;
+  background-color: #373737;
 }
 
 @media (max-width: 500px) {

@@ -19,13 +19,13 @@ header {
   gap: 52px;
 }
 
-header a {
+.header-menu a {
   display: inline-block;
   font-weight: normal;
   padding: 16px 0px;
 }
 
-header a:hover {
+.header-menu a:hover {
   color: #f05180;
 }
 
@@ -36,11 +36,11 @@ header a:hover {
 #title {
   animation: blink-caret 0.75s infinite;
   border-right: 16px solid #e1e1e1;
-  margin: 18vh 0vh;
   display: inline-block;
   white-space: nowrap;
   font-weight: bold;
-  font-size: 10vw;
+  margin: 18vh 0vh;
+  font-size: 9vw;
 }
 
 @keyframes blink-caret {
@@ -56,10 +56,9 @@ header a:hover {
 .button {
   background-color: #f05180;
   display: inline-block;
-  text-align: center;
   padding: 16px 32px;
   color: #340010;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .button:hover {
@@ -75,7 +74,7 @@ header a:hover {
   .header-menu a {
     background-color: #373737;
     border-radius: 4px;
-    padding: 16px 16px;
+    padding: 12px 16px;
   }
 
   #title {
@@ -85,6 +84,6 @@ header a:hover {
 
 @media (max-width: 500px) {
   .header-menu a {
-    padding: 10px 10px;
+    padding: 12px 12px;
   }
 }

@@ -1,4 +1,4 @@
-.experience {
+#experience {
   grid-template-columns: 1fr 1fr;
   margin-right: auto;
   margin-left: auto;
@@ -8,27 +8,27 @@
   gap: 64px;
 }
 
+#experience h2 {
+  grid-column: span 2;
+}
+
 .content {
   background-color: #161616;
   border-radius: 4px;
   padding: 52px;
 }
 
-hr {
+.content hr {
   border: 1px solid #1e1e1e;
   margin: -20px 0px 20px 0px;
 }
 
-.experience h2 {
-  grid-column: span 2;
-}
-
-.experience img {
+.content img {
   border-radius: 4px;
   margin-top: 40px;
 }
 
-.experience a {
+.content a {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   background-color: #f05180;
   margin: -52px 0px 0px 16px;
@@ -38,30 +38,24 @@ hr {
   color: #340010;
 }
 
-.experience a:hover {
+.content a:hover {
   background-color: #340010;
   color: #ffc5da;
 }
 
-@media (max-width: 1050px) {
-  .experience {
+@media (max-width: 1000px) {
+  #experience {
     gap: 32px;
-  }
-
-  .content {
-    padding: 20px;
+    padding: 32px;
   }
 }
 
 @media (max-width: 700px) {
   .content {
     grid-column: span 2;
-    margin: 20px;
   }
-}
 
-@media (max-width: 500px) {
-  .experience h2 {
+  #experience h2 {
     text-align: center;
   }
 }

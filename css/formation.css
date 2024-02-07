@@ -1,21 +1,19 @@
-.formation {
+#formation {
   grid-template-columns: 1fr 1fr;
   background-color: #161616;
-  margin-top: 200px;
-  column-gap: 40px;
   padding: 128px 100px;
+  margin-top: 200px;
   display: grid;
   row-gap: 0px;
 }
 
-.formation h2 {
+#formation h2 {
   grid-column: span 2;
   text-align: end;
 }
 
-.formation p {
-  padding: 4px 22px;
-  color: #c3c3c3;
+.formation-container p {
+  padding: 4px 0px 0px 24px;
 }
 
 .box {
@@ -47,12 +45,11 @@
 }
 
 .icons-container {
-  display: flex;
-  gap: 80px 40px;
-  flex-wrap: wrap;
-  justify-content: center;
   place-content: center;
+  flex-wrap: wrap;
   padding: 100px;
+  gap: 80px 40px;
+  display: flex;
 }
 
 .icons-container img {
@@ -67,39 +64,28 @@
 }
 
 @media (max-width: 800px) {
-  .formation {
+  #formation {
     padding: 40px;
   }
 
-  .formation-content {
-    grid-column: span 2;
-  }
-
+  .formation-container,
   .icons-container {
-    width: 300px;
-    margin: 32px;
+    grid-column: span 2;
+    margin: 20px 0px;
   }
 
-  .formation h2 {
+  #formation h2 {
     text-align: center;
+  }
+
+  .icons-container img {
+    height: auto;
+    width: 60px;
   }
 }
 
 @media (max-width: 500px) {
-  .formation p {
+  .formation-container p {
     font-size: 0.8rem;
-  }
-
-  .formation {
-    padding: 60px 8px;
-  }
-
-  .icons-container {
-    width: 200px;
-  }
-
-  .icons-container img {
-    width: 60px;
-    height: auto;
   }
 }

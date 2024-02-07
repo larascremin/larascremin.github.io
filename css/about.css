@@ -1,17 +1,19 @@
 #about {
   grid-template-columns: 1fr 1fr;
   background-color: #e1e1e1;
+  place-items: center;
   margin: 200px 0px;
   color: #1e1e1e;
   display: grid;
 }
 
 .introduction {
-  padding: 200px 128px 0px 128px;
+  padding: 0px 128px;
 }
 
 .introduction img {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  object-fit: cover;
   width: 40px;
 }
 
@@ -25,33 +27,19 @@
   filter: grayscale(0%);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
   .introduction {
-    padding: 40px;
-  }
-}
-
-@media (max-width: 900px) {
-  #portrait {
-    object-fit: cover;
-  }
-
-  .introduction {
-    padding: 16px;
+    padding: 20px;
   }
 }
 
 @media (max-width: 800px) {
-  #about {
-    margin-bottom: 100px;
+  .introduction {
+    grid-column: span 2;
+    padding: 100px 20px;
   }
 
   #portrait {
     grid-column: span 2;
-  }
-
-  .introduction {
-    grid-column: span 2;
-    padding: 100px 20px;
   }
 }

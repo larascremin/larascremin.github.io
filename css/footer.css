@@ -1,85 +1,70 @@
-.decoration-light {
-  height: 10px;
-  background-color: #767676;
-}
-
-.decoration-dark {
-  height: 10px;
-  background-color: #373737;
-}
-
 .footer {
   background-color: #f2f2f2;
-  color: #1e1e1e;
   padding: 64px 100px;
+  color: #1e1e1e;
 }
 
 .above-line {
   text-align: center;
 }
 
-.bellow-line {
-  display: flex;
-  margin: 32px 20px;
-}
-
 .footer-buttons {
-  display: flex;
   justify-content: center;
+  display: flex;
 }
 
 .footer-buttons a {
-  display: inline-block;
+  margin: 20px 16px 100px 16px;
   background-color: #c3c3c3;
-  color: #1e1e1e;
+  justify-content: center;
+  display: inline-block;
+  align-items: center;
+  transition: 0.2s;
+  display: flex;
   width: 180px;
   height: 52px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 32px 20px 100px 20px;
-  transition: 0.2s;
 }
 
 .footer-buttons a:hover {
-  background-color: #f05180;
-  color: #340010;
-}
-
-.footer p {
-  margin-bottom: 4px;
-}
-
-.footer-list {
-  margin-right: 200px;
+  background-color: #340010;
+  color: #ffc5da;
 }
 
 .footer hr {
   border: 1px solid #c3c3c3;
 }
 
-.footer-contact p {
-  margin: 10px 0px;
+.bellow-line {
+  margin: 32px 0px;
+  display: flex;
+}
+
+.footer-list {
+  margin-right: 200px;
 }
 
 .footer-list a {
-  margin: 10px 0px;
   display: inline-block;
   font-weight: normal;
+  margin: 10px 0px;
 }
 
 .footer-list a:hover {
   color: #f05180;
 }
 
+.footer-contact p {
+  margin: 8px 0px 12px 0px;
+}
+
 .icons-box {
   display: flex;
-  gap: 8px;
+  gap: 16px;
 }
 
 .icons-box img {
+  margin: 8px 0px;
   width: 40px;
-  margin: 16px 0px;
 }
 
 .icons-box img:hover {
@@ -87,16 +72,16 @@
 }
 
 @media (max-width: 800px) {
-  .footer {
-    padding: 64px 16px;
-  }
-
   .footer-list {
     margin-right: 60px;
   }
 }
 
 @media (max-width: 500px) {
+  .footer {
+    padding: 64px 16px;
+  }
+
   .footer p,
   a {
     font-size: 0.8rem;
