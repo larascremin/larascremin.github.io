@@ -14,14 +14,19 @@
 
   <body>
     <div class="home">
-      <header>
+      <header id="header">
         <img id="logo" src="./img/logo.svg" />
-        <ul class="header-menu">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#formation">Formation</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <nav id="nav">
+          <button id="mobile">
+            MENU <img id="hamburguer" src="./img/menu.svg" />
+          </button>
+          <ul id="menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#formation">Formation</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </header>
       <div id="title">lara.scremin</div>
       <p>
@@ -196,5 +201,7 @@
         </div>
       </div>
     </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
