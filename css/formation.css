@@ -1,91 +1,143 @@
-#formation {
-  grid-template-columns: 1fr 1fr;
-  background-color: #161616;
-  padding: 128px 100px;
-  margin-top: 200px;
-  display: grid;
-  row-gap: 0px;
-}
-
-#formation h2 {
-  grid-column: span 2;
-  text-align: end;
-}
-
-.formation-container p {
-  padding: 4px 0px 8px 24px;
-}
-
-.box {
-  margin: 64px 0px 32px 0px;
+.formation {
+  max-width: 1200px;
+  margin: 300px auto;
+  text-align: center;
+  position: relative;
   align-items: center;
-  display: flex;
-  gap: 8px;
+  justify-content: center;
 }
 
-.box hr {
-  flex: 1;
-  border: none;
-  border-top: 2px solid #1e1e1e;
-  margin-top: 0;
-  margin-bottom: 0;
+.formation .frame-title {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -3;
 }
 
-.box img {
-  width: 16px;
+.formation-title {
+  padding: 0px !important;
+}
+.formation h2 {
+  padding-left: 50px;
 }
 
-.container {
+.formation-grid {
+  margin: 100px 0px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   justify-content: space-between;
-  display: flex;
+  gap: 60px;
+  padding: 20px;
 }
 
-.course-hour {
+.cont {
+  background-color: #313131;
+  border-radius: 20px;
+  padding: 40px 40px 60px;
+  text-align: left;
+  position: relative;
+}
+
+.language p {
+  margin: 40px 0px 10px;
+}
+
+.parameter-container {
+  position: relative;
+}
+
+.parameter {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background-color: #f4f0ed;
+  z-index: 8;
+  border-radius: 10px;
+}
+
+.parameter-purple {
+  position: absolute;
+  height: 10px;
+  background-color: #cd71fe;
+  z-index: 9;
+  border-radius: 10px;
+}
+
+.portuguese {
+  width: 100%;
+}
+
+.english {
+  width: 90%;
+}
+
+.spanish {
+  width: 40%;
+}
+
+.language h2::before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: 42px;
+  width: 34px;
+  height: 26px;
+  background-image: url("../assets/arrow-formation.svg");
+  background-size: cover;
+}
+
+.formation-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.skills h2::before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: 42px;
+  width: 34px;
+  height: 26px;
+  background-image: url("../assets/arrow-formation.svg");
+  background-size: cover;
+}
+
+.skills-icons {
+  margin-top: 40px;
+  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.skills-icons img {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.skill-icons-content {
+  text-align: center;
+}
+
+.skill-icons-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 30px 40px;
+}
+
+.timeline h3 {
   text-align: right;
 }
 
-.icons-container {
-  place-content: center;
-  flex-wrap: wrap;
-  padding: 100px;
-  gap: 80px 40px;
-  display: flex;
-}
-
-.icons-container img {
-  height: 90px;
-}
-
-@media (max-width: 1200px) {
-  .icons-container {
-    padding: 20px;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 800px) {
-  #formation {
-    padding: 40px;
-  }
-
-  .formation-container,
-  .icons-container {
-    grid-column: span 2;
-    margin: 20px 0px;
-  }
-
-  #formation h2 {
-    text-align: center;
-  }
-
-  .icons-container img {
-    height: auto;
-    width: 60px;
-  }
-}
-
-@media (max-width: 500px) {
-  .formation-container p {
-    font-size: 0.8rem;
-  }
+.timeline p {
+  text-align: left;
 }

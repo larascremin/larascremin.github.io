@@ -1,89 +1,71 @@
-.footer {
-  background-color: #f2f2f2;
-  padding: 64px 100px;
-  color: #1e1e1e;
-}
-
-.above-line {
+footer {
+  margin-top: 300px;
+  background-color: #313131;
   text-align: center;
 }
 
-.footer-buttons {
-  justify-content: center;
+.footer {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 100px 20px 60px;
   display: flex;
+  justify-content: space-between;
 }
 
-.footer-buttons a {
-  margin: 20px 16px 100px 16px;
-  background-color: #c3c3c3;
-  justify-content: center;
-  display: inline-block;
-  align-items: center;
-  transition: 0.2s;
-  display: flex;
-  width: 180px;
-  height: 52px;
+.footer button {
+  height: 50px; /* Altura desejada para o botão */
+  font-size: 16px;
 }
 
-.footer-buttons a:hover {
-  background-color: #340010;
-  color: #ffc5da;
+.curriculum {
+  position: relative;
+
+  text-align: left;
 }
 
-.footer hr {
-  border: 1px solid #c3c3c3;
+.curriculum p {
+  margin: 10px 0px 0px 60px;
 }
 
-.bellow-line {
-  margin: 32px 0px;
-  display: flex;
+.curriculum p::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 40px;
+  width: 34px;
+  height: 30px;
+  background-image: url("../assets/arrow2.svg");
+  background-size: cover;
 }
 
-.footer-list {
-  margin-right: 200px;
+.contact {
+  position: relative;
+  text-align: left;
 }
 
-.footer-list a {
-  display: inline-block;
-  font-weight: normal;
-  margin: 10px 0px;
+.contact h2 {
+  margin-bottom: 20px;
 }
 
-.footer-list a:hover {
-  color: #f05180;
+.contact p {
+  margin-bottom: 10px;
 }
 
-.footer-contact p {
-  margin: 8px 0px 12px 0px;
+.contact h2::before {
+  content: "";
+  position: absolute;
+  left: 160px;
+  width: 26px;
+  height: 30px;
+  background-image: url("../assets/smile.svg");
+  background-size: cover;
 }
 
-.icons-box {
-  display: flex;
-  gap: 16px;
+.social img {
+  width: 30px;
+  margin-bottom: 20px;
 }
 
-.icons-box img {
-  margin: 8px 0px;
-  width: 40px;
-}
-
-.icons-box img:hover {
-  transform: scale(1.2);
-}
-
-@media (max-width: 800px) {
-  .footer-list {
-    margin-right: 60px;
-  }
-}
-
-@media (max-width: 500px) {
-  .footer {
-    padding: 64px 16px;
-  }
-
-  .footer p,
-  a {
-    font-size: 0.8rem;
-  }
+.rights {
+  padding: 20px;
 }

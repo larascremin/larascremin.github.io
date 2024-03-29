@@ -1,61 +1,51 @@
-#experience {
-  grid-template-columns: 1fr 1fr;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1160px;
+.experience {
+  max-width: 1200px;
+  margin: 300px auto;
+  text-align: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-title {
+  margin: 160px 0px;
+}
+
+.img {
+  border-radius: 4px;
+  height: 100%;
+}
+
+.experience-grid {
   display: grid;
-  padding: 20px;
-  gap: 64px;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  text-align: left;
+  gap: 160px 0px;
 }
 
-#experience h2 {
-  grid-column: span 2;
-}
-
-.content {
-  background-color: #161616;
-  border-radius: 4px;
-  padding: 52px;
-}
-
-.content hr {
-  border: 1px solid #1e1e1e;
-  margin: -20px 0px 20px 0px;
-}
-
-.content img {
-  border-radius: 4px;
-  margin-top: 40px;
-}
-
-.content a {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-  background-color: #f05180;
-  margin: -52px 0px 0px 16px;
-  display: inline-block;
+.frame-title {
   position: absolute;
-  padding: 8px 16px;
-  color: #340010;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
 }
 
-.content a:hover {
-  background-color: #340010;
-  color: #ffc5da;
+.experience ul {
+  padding: 40px 60px;
+  list-style-image: url("../assets/list.svg");
 }
 
-@media (max-width: 1000px) {
-  #experience {
-    gap: 32px;
-    padding: 32px;
-  }
+.experience li {
+  padding: 6px;
 }
 
-@media (max-width: 700px) {
-  .content {
-    grid-column: span 2;
-  }
+.experience button {
+  margin-left: 40px;
+}
 
-  #experience h2 {
-    text-align: center;
-  }
+.container-img {
+  display: flex;
+  justify-content: center;
 }

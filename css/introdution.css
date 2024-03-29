@@ -1,0 +1,79 @@
+.introduction {
+  margin-top: 300px;
+  background-color: #313131;
+}
+
+.introduction-container {
+  display: flex;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  gap: 100px;
+  padding: 100px 0px;
+  align-items: center;
+}
+
+.introduction-text {
+  padding: 40px;
+  position: relative;
+  max-width: 400px;
+}
+
+.introduction-text p {
+  margin: 40px 0px;
+}
+
+.introduction-text h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 44px;
+  width: 26px;
+  height: 30px;
+  background-image: url("../assets/shine1.svg");
+  background-size: cover;
+}
+
+.instagram {
+  border: 3px solid #f4f0ed;
+  border-radius: 40px;
+  width: 320px;
+  padding: 20px 30px;
+}
+
+.instagram-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.instagram-header .settings {
+  margin-left: auto;
+}
+
+.portrait {
+  border-radius: 4px;
+  margin: 16px 0px;
+}
+
+.instagram-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.instagram-buttons .icons:last-child {
+  margin-left: auto;
+}
+
+.icons {
+  width: auto;
+  height: 24px;
+}
+
+.settings {
+  font-size: 1.8rem;
+  line-height: 1;
+}
