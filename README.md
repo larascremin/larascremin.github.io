@@ -1,4 +1,4 @@
-### MY PORTFOLIO PAGE 💻
+### MY PORTFOLIO PAGE 💻 (remaking)
 
 This is my portfolio, where I showcase my work experiences and skills. <br>
 A portfolio page serves as a digital showcase of one's work, skills, and accomplishments.
