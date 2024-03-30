@@ -69,3 +69,53 @@ footer {
 .rights {
   padding: 20px;
 }
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .contact,
+  .curriculum {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .curriculum button {
+    width: 220px;
+    align-self: center;
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contact h2::before {
+    content: "";
+    position: absolute;
+    left: 70%;
+    width: 26px;
+    height: 30px;
+    background-image: url("../assets/smile.svg");
+    background-size: cover;
+  }
+
+  .curriculum p::before {
+    content: "";
+    position: absolute;
+    left: 30%;
+    top: 40px;
+    width: 34px;
+    height: 30px;
+    background-image: url("../assets/arrow2.svg");
+    background-size: cover;
+  }
+}

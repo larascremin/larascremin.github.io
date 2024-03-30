@@ -1,14 +1,15 @@
 .experience {
-  max-width: 1120px;
+  max-width: 1100px;
   margin: 300px auto;
   text-align: center;
   position: relative;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .experience-title {
-  margin: 160px 0px;
+  margin-bottom: 160px;
 }
 
 .img {
@@ -26,7 +27,7 @@
 
 .frame-title {
   position: absolute;
-  top: 14px;
+  top: 40px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -2;
@@ -79,4 +80,15 @@
   background-image: url("../assets/arrow3.svg");
   background-size: cover;
   z-index: 10;
+}
+
+@media (max-width: 800px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .experience-grid-projects {
+    margin-top: 60px;
+  }
 }

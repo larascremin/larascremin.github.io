@@ -9,24 +9,35 @@
   </head>
   <body>
     <div class="home">
-      <header>
+      <header id="header">
         <h2 class="logo">
           <a href="https://github.com/larascremin" target="_blank"
             >&lt;The Creator /&gt;</a
           >
         </h2>
-        <ul id="menu">
-          <li><a href="#introduction">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#formation">Formation</a></li>
-          <li>
-            <button>
-              <a href="./assets/lara.scremin.pdf" target="_blank"
-                >CURRICULUM VITAE</a
-              >
-            </button>
-          </li>
-        </ul>
+        <nav id="nav">
+          <button
+            aria-label="Abrir Menu"
+            id="btn-mobile"
+            aria-haspopup="true"
+            aria-controls="menu"
+            aria-expanded="false"
+          >
+            <span id="hamburger"></span>
+          </button>
+          <ul id="menu" role="menu">
+            <li><a href="#introduction">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#formation">Formation</a></li>
+            <li>
+              <button>
+                <a href="./assets/lara.scremin.pdf" target="_blank"
+                  >CURRICULUM VITAE</a
+                >
+              </button>
+            </li>
+          </ul>
+        </nav>
       </header>
       <div class="principal">
         <div class="content">
@@ -86,7 +97,7 @@
         </div>
         <div class="experience-grid-eloware">
           <h2>IT Analyst at Eloware</h2>
-          <p><span>actual job since 2022</span></p>
+          <p><span class="grey">actual job since 2022</span></p>
           <ul>
             <li>Data Security, ISO/IEC 27001, 27701, 27018 and GDPL;</li>
             <li>
@@ -100,7 +111,7 @@
         </div>
         <div class="experience-grid-projects">
           <h2>Front-end Projects</h2>
-          <p><span>give a look on my github</span></p>
+          <p><span class="grey">give a look on my github</span></p>
           <ul>
             <li>Front-end development with accessibility standards;</li>
             <li>
@@ -325,7 +336,7 @@
         </div>
       </div>
       <p class="rights">
-        <span>Created and Owned by LaraScremin @2024</span>
+        <span class="grey">Created and Owned by LaraScremin @2024</span>
       </p>
     </footer>
 

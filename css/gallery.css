@@ -11,7 +11,7 @@
 
 .gallery .frame-title {
   position: absolute;
-  top: 10px;
+  top: 14px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -4;
@@ -20,14 +20,14 @@
 .shine1 {
   position: absolute;
   top: -20px;
-  left: 36%;
+  left: 33%;
   z-index: -6;
 }
 
 .shine2 {
   position: absolute;
   top: 10px;
-  left: 62%;
+  left: 64%;
   z-index: -7;
 }
 
@@ -82,7 +82,80 @@
   margin: 20px;
 }
 
+.key img {
+  width: 32%;
+}
+
 .key .comment {
   transform: rotate(-2deg);
   margin: 10px 60px;
+}
+
+@media (max-width: 900px) {
+  .shine1 {
+    position: absolute;
+    top: -20px;
+    left: 28%;
+    z-index: -6;
+  }
+
+  .shine2 {
+    position: absolute;
+    top: 10px;
+    left: 70%;
+    z-index: -7;
+  }
+
+  .location {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 200px;
+    left: 30px;
+    transform: rotate(-4deg);
+    z-index: 20;
+  }
+
+  .gallery .comment {
+    margin: 10px 20px -10px;
+    text-align: end;
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery-grid {
+    gap: 10px;
+    margin: 10px 20px;
+  }
+  .shine1 {
+    position: absolute;
+    top: -20px;
+    left: 18%;
+    z-index: -6;
+  }
+
+  .shine2 {
+    position: absolute;
+    top: 10px;
+    left: 78%;
+    z-index: -7;
+  }
+  .location img {
+    width: 20px;
+  }
+
+  .location {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 180px;
+    left: 20px;
+    transform: rotate(-4deg);
+    z-index: 20;
+  }
+
+  .key {
+    margin: 0px 20px;
+  }
 }

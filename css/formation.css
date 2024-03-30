@@ -9,7 +9,7 @@
 
 .formation .frame-title {
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -3;
@@ -149,4 +149,24 @@
 .timeline-span {
   opacity: 50%;
   margin-bottom: 6px;
+}
+
+@media (max-width: 900px) {
+  .formation-grid {
+    gap: 40px;
+  }
+
+  .skills-icons {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .formation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formation-grid {
+    gap: 80px;
+  }
 }

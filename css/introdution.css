@@ -5,12 +5,12 @@
 
 .introduction-container {
   display: flex;
-  max-width: 1120px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
   gap: 100px;
-  padding: 100px 0px;
+  padding: 100px 20px;
   align-items: center;
 }
 
@@ -94,4 +94,20 @@
 .settings {
   font-size: 1.8rem;
   line-height: 1;
+}
+
+@media (max-width: 1000px) {
+  .introduction-container {
+    gap: 40px;
+  }
+
+  .introduction-text {
+    padding: 40px 0px 40px 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .introduction-container {
+    flex-direction: column;
+  }
 }
