@@ -17,19 +17,8 @@ header {
   align-items: center;
 }
 
-#menu li:not(:last-child) a::after {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 0%;
-  background-color: #f4f0ed;
-  margin-top: 4px;
-  transition: 0.3s;
-  border-radius: 4px;
-}
-
-#menu li:not(:last-child) a:hover::after {
-  width: 100%;
+#menu li:hover {
+  color: #cd71fe;
 }
 
 .logo {
@@ -77,8 +66,9 @@ header {
 .photo {
   position: absolute;
   z-index: 1;
-  margin-top: -31px;
+  margin-top: -37px;
   margin-right: 4px;
+  height: 440px;
 }
 
 .arrow-container {

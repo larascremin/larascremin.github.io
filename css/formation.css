@@ -9,7 +9,7 @@
 
 .formation .frame-title {
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -3;
@@ -135,7 +135,7 @@
 .timeline {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  gap: 40px 60px;
+  gap: 40px;
 }
 
 .timeline h3 {

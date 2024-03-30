@@ -26,14 +26,14 @@
 
 .frame-title {
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -2;
 }
 
 .experience ul {
-  padding: 40px 60px;
+  padding: 40px 0px 40px 60px;
   list-style-image: url("../assets/list.svg");
 }
 
