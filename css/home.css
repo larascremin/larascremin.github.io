@@ -1,5 +1,5 @@
 .home {
-  max-width: 1200px;
+  max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -17,8 +17,19 @@ header {
   align-items: center;
 }
 
-#menu li:hover {
-  color: #cd71fe;
+#menu li:not(:last-child) a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0%;
+  background-color: #f4f0ed;
+  margin-top: 4px;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+#menu li:not(:last-child) a:hover::after {
+  width: 100%;
 }
 
 .logo {
@@ -66,7 +77,7 @@ header {
 .photo {
   position: absolute;
   z-index: 1;
-  margin-top: -38px;
+  margin-top: -31px;
   margin-right: 4px;
 }
 
@@ -75,6 +86,7 @@ header {
   justify-content: center;
   grid-column: span 2;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .arrow-container:hover {

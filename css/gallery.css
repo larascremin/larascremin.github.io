@@ -1,5 +1,5 @@
 .gallery {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 200px auto;
   text-align: center;
   position: relative;
@@ -44,6 +44,12 @@
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+  filter: grayscale(0%);
 }
 
 .grid-one {
@@ -63,9 +69,10 @@
   position: absolute;
   display: flex;
   align-items: center;
-  top: 350px;
+  top: 250px;
   left: 60px;
   transform: rotate(-4deg);
+  z-index: 20;
 }
 
 .key {

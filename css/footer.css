@@ -5,15 +5,15 @@ footer {
 }
 
 .footer {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0px auto;
-  padding: 100px 20px 60px;
+  padding: 80px 20px 40px;
   display: flex;
   justify-content: space-between;
 }
 
 .footer button {
-  height: 50px; /* Altura desejada para o botão */
+  height: 50px;
   font-size: 16px;
 }
 
@@ -44,7 +44,7 @@ footer {
 }
 
 .contact h2 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .contact p {

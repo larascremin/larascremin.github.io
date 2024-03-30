@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lara Scremin - Portfolio</title>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="icon" type="image/svg" href="./assets/logo.svg" />
   </head>
   <body>
     <div class="home">
@@ -15,10 +16,16 @@
           >
         </h2>
         <ul id="menu">
-          <li><a href="#about">About</a></li>
+          <li><a href="#introduction">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#formation">Formation</a></li>
-          <li><button>CURRICULUM VITAE</button></li>
+          <li>
+            <button>
+              <a href="./assets/lara.scremin.pdf" target="_blank"
+                >CURRICULUM VITAE</a
+              >
+            </button>
+          </li>
         </ul>
       </header>
       <div class="principal">
@@ -35,12 +42,14 @@
           <img src="assets/myself.png" class="photo" />
         </div>
         <div class="arrow-container">
-          <img src="assets/arrow-down.svg" class="arrow-down" />
+          <a href="#footer"
+            ><img src="assets/arrow-down.svg" class="arrow-down" />
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="introduction">
+    <div class="introduction" id="introduction">
       <div class="introduction-container">
         <div class="instagram">
           <div class="instagram-header">
@@ -50,7 +59,10 @@
           </div>
           <img src="assets/portrait.jpg" class="portrait" />
           <div class="instagram-buttons">
-            <img src="assets/heart-icon.svg" class="icons" />
+            <button class="heart-button heart" onclick="handleClick()">
+              <img id="heart-icon" src="assets/heart-icon.svg" class="icons" />
+            </button>
+
             <img src="assets/comment-icon.png" class="icons" />
             <img src="assets/send-icon.svg" class="icons" />
             <img src="assets/save-icon.svg" class="icons" />
@@ -60,50 +72,70 @@
           <h2>Hello, I am Lara</h2>
           <p>
             I am an Information Technology student with a passion for the
-            digital realm. <br /><br />I am dedicated to continuous growth,
-            showcasing resilience and flexibility with a strong ability to work
-            effectively in a team or individually.
+            digital realm. <br /><br />
+            I am driven by a constant desire for growth, demonstrating
+            resilience and adaptability. My strong collaborative skills enable
+            me to excel both as a team player and an independent thinker.
           </p>
           <p class="comment">click in the like button</p>
         </div>
       </div>
     </div>
 
-    <div class="experience">
+    <div class="experience" id="experience">
       <img src="assets/title-first.svg" class="frame-title" />
       <h2 class="experience-title">MY EXPERIENCE</h2>
       <div class="experience-grid">
         <div class="container-img">
           <img src="assets/eloware.jpg" class="img" />
         </div>
-
         <div class="experience-grid-eloware">
           <h2>IT Analyst at Eloware</h2>
           <p><span>actual job since 2022</span></p>
           <ul>
             <li>Data Security, ISO/IEC 27001, 27701, 27018 and GDPL;</li>
-            <li>Networks, servers, monitoring, and administration tools;</li>
-            <li>IT assistent, with hardware and software support;</li>
+            <li>
+              Networks, servers, firewall, monitoring, and administration tools;
+            </li>
+            <li>
+              IT assistent, with hardware, software and troubleshooting support
+              ;
+            </li>
           </ul>
-          <button>KNOW MORE</button>
-        </div>
-        <div class="container-img">
-          <img src="assets/baroque.jpg" class="img" />
+          <button>
+            <a href="https://www.eloware.com.br/" target="_blank">KNOW MORE</a>
+          </button>
         </div>
         <div class="experience-grid-projects">
           <h2>Front-end Projects</h2>
           <p><span>give a look on my github</span></p>
           <ul>
-            <li>Front-end development with accessibility standards;</li>
-            <li>Prototype, branding, and UI/UX design;</li>
-            <li>Framework utilization and testing</li>
+            <li>
+              Front-end development with accessibility standards, following WCAG
+              guidelines;
+            </li>
+            <li>
+              Prototype, and UI/UX design, branding and design of visual
+              elements like SVG;
+            </li>
+            <li>
+              Framework utilization like React and Angular and testing tools;
+            </li>
           </ul>
-          <button>KNOW MORE</button>
+          <button>
+            <a href="https://github.com/larascremin" target="_blank"
+              >KNOW MORE</a
+            >
+          </button>
+        </div>
+        <div class="container-img especial">
+          <img src="assets/baroque.jpg" class="img" />
         </div>
       </div>
+      <p class="comment">you can see this on my Github</p>
     </div>
 
-    <div class="formation">
+    <div class="formation" id="formation">
       <img src="./assets/title-second.svg" class="frame-title" />
       <h2 class="formation-title">MY FORMATION</h2>
       <div class="formation-grid">
@@ -149,54 +181,107 @@
                 <img src="./assets/figma.svg" />
                 <p class="comment">Figma</p>
               </div>
+              <div class="skill-icons-content">
+                <img src="./assets/git.svg" />
+                <p class="comment">Git</p>
+              </div>
+              <div class="skill-icons-content">
+                <img src="./assets/azure.svg" />
+                <p class="comment">Azure</p>
+              </div>
+              <div class="skill-icons-content">
+                <img src="./assets/iso.svg" />
+                <p class="comment">ISO</p>
+              </div>
+              <div class="skill-icons-content">
+                <img src="./assets/java.svg" />
+                <p class="comment">Java</p>
+              </div>
+              <div class="skill-icons-content">
+                <img src="./assets/gitlab.svg" />
+                <p class="comment">GitLab</p>
+              </div>
+              <div class="skill-icons-content">
+                <img src="./assets/linux.svg" />
+                <p class="comment">Linux</p>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="timeline">
           <h3>feb, 2024</h3>
-          <p>
-            ISO 27001:2022 Implementer Certification, at Dedalo - Information
-            Security Intelligence
-          </p>
-          <h3>2023 - 2026</h3>
-          <p>
-            Bachelor's Degree, UNIBAVE<br />
-            I am currently in the third phase of the Information Technology
-            college program.
-          </p>
+          <div class="timeline-container">
+            <p class="timeline-span">Certification</p>
+            <p>
+              ISO 27001:2022 Implementer Certification, at Dedalo - Information
+              Security Intelligence
+            </p>
+          </div>
 
+          <h3>2023 - 2026</h3>
+          <div class="timeline-container">
+            <p class="timeline-span">Bachelor's Degree</p>
+            <p>
+              I am currently in the third phase of the Information Technology
+              college program.
+            </p>
+          </div>
           <h3>oct, 2023</h3>
-          <p>
-            Security Tech Day, at ACATE (Association of Technology of Santa
-            Catarina)
-          </p>
+          <div class="timeline-container">
+            <p class="timeline-span">Event</p>
+            <p>
+              Security Tech Day, at ACATE (Association of Technology of Santa
+              Catarina)
+            </p>
+          </div>
           <h3>sept, 2023</h3>
-          <p>
-            Finalist at REUNI Challenge, an Entrepreneurship Bootcamp, the
-            largest university entrepreneurship competition in Brazil
-          </p>
-          <h3>apr - nov, 2023</h3>
-          <p>Undergraduate Research in Pure and Applied Mathematics, at UFSC</p>
-          <h3>mar - jun, 2023</h3>
-          <p>
-            Java Course Certification, at Unibave (Barriga Verde University
-            Center)
-          </p>
-          <h3>fev, 2023</h3>
-          <p>
-            General Data Protection Regulation (GDPR) Certification, at Bradesco
-            Academy
-          </p>
+          <div class="timeline-container">
+            <p class="timeline-span">Certification</p>
+            <p>
+              Finalist at REUNI Challenge, an Entrepreneurship Bootcamp, the
+              largest university entrepreneurship competition in Brazil
+            </p>
+          </div>
+          <h3>2023</h3>
+          <div class="timeline-container">
+            <p class="timeline-span">Research</p>
+            <p>
+              Undergraduate Research in Pure and Applied Mathematics, at UFSC
+            </p>
+          </div>
+          <h3>jun, 2023</h3>
+          <div class="timeline-container">
+            <p class="timeline-span">Certification</p>
+            <p>
+              Java Course Certification, at Unibave (Barriga Verde University
+              Center)
+            </p>
+          </div>
+
           <h3>2019 - 2021</h3>
-          <p>
-            Industrial Administration Apprenticeship, at SENAI (National Service
-            for Learning)
-          </p>
-          <h3>apr - nov, 2018</h3>
-          <p>Undergraduate Research in Pure and Applied Mathematics, at UFSC</p>
+          <div class="timeline-container">
+            <p class="timeline-span">Certification</p>
+            <p>
+              Industrial Administration Apprenticeship, at SENAI (National
+              Service for Learning)
+            </p>
+          </div>
+          <h3>2018</h3>
+          <div class="timeline-container">
+            <p class="timeline-span">Research</p>
+            <p>
+              Undergraduate Research in Pure and Applied Mathematics, at UFSC
+            </p>
+          </div>
           <h3>2017 - 2018</h3>
-          <p>Graphic Design & Digital Marketing Certification, at UNISOFT</p>
+          <div class="timeline-container">
+            <p class="timeline-span">Certification</p>
+            <p>
+              Graphic Design, Digital Marketing & CorelDrawX4 Certification, at
+              UNISOFT
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -225,7 +310,7 @@
       </div>
     </div>
 
-    <footer>
+    <footer id="footer">
       <div class="footer">
         <div class="contact">
           <h2>Get in Touch</h2>
@@ -234,19 +319,35 @@
           <p>São Ludgero, SC, Brazil</p>
         </div>
         <div class="curriculum">
-          <button>CURRICULUM VITAE</button>
+          <button>
+            <a href="./assets/lara.scremin.pdf" target="_blank"
+              >CURRICULUM VITAE</a
+            >
+          </button>
           <p class="comment">get a better look</p>
         </div>
         <div class="social">
-          <img src="assets/github.svg" />
-          <img src="assets/gmail.svg" />
-          <img src="assets/instagram.svg" />
-          <img src="assets/linkedin.svg" />
+          <a href="https://github.com/larascremin" target="_blank"
+            ><img src="assets/github.svg"
+          /></a>
+          <a href="mailto:lscreminmendes@gmail.com"
+            ><img src="assets/gmail.svg"
+          /></a>
+          <a href="https://www.instagram.com/lara_mendesscr/" target="_blank"
+            ><img src="assets/instagram.svg"
+          /></a>
+          <a
+            href="https://www.linkedin.com/in/lara-mendes-scremin-742076259"
+            target="_blank"
+            ><img src="assets/linkedin.svg"
+          /></a>
         </div>
       </div>
       <p class="rights">
         <span>Created and Owned by LaraScremin @2024</span>
       </p>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

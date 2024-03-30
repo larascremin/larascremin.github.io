@@ -5,7 +5,7 @@
 
 .introduction-container {
   display: flex;
-  max-width: 1200px;
+  max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -22,6 +22,15 @@
 
 .introduction-text p {
   margin: 40px 0px;
+}
+
+.heart-button {
+  border: none;
+  padding: 0;
+}
+
+.heart-button:hover {
+  background-color: transparent;
 }
 
 .introduction-text h2::before {
@@ -51,6 +60,11 @@
 
 .instagram-header .settings {
   margin-left: auto;
+  transform: rotate(-90deg);
+}
+
+.instagram-header img {
+  width: 40px;
 }
 
 .portrait {
@@ -62,6 +76,10 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
+}
+
+.instagram-buttons .heart {
+  cursor: pointer;
 }
 
 .instagram-buttons .icons:last-child {

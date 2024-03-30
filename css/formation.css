@@ -1,6 +1,6 @@
 .formation {
-  max-width: 1200px;
-  margin: 300px auto;
+  max-width: 1120px;
+  margin: 400px auto;
   text-align: center;
   position: relative;
   align-items: center;
@@ -23,7 +23,7 @@
 }
 
 .formation-grid {
-  margin: 100px 0px;
+  margin: 140px 0px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   justify-content: space-between;
@@ -76,6 +76,10 @@
   width: 40%;
 }
 
+.language {
+  margin-bottom: 20px;
+}
+
 .language h2::before {
   content: "";
   position: absolute;
@@ -114,7 +118,7 @@
   text-align: center;
 }
 .skills-icons img {
-  height: 50px;
+  height: 44px;
   margin-bottom: 10px;
 }
 
@@ -131,7 +135,7 @@
 .timeline {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  gap: 30px 40px;
+  gap: 40px 60px;
 }
 
 .timeline h3 {
@@ -140,4 +144,9 @@
 
 .timeline p {
   text-align: left;
+}
+
+.timeline-span {
+  opacity: 50%;
+  margin-bottom: 6px;
 }
