@@ -32,11 +32,10 @@ header {
 }
 
 .principal {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 6em;
-  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 70px);
 }
 
 .content h1 {
