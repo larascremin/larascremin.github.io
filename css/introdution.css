@@ -47,8 +47,9 @@
 .instagram {
   border: 3px solid #f4f0ed;
   border-radius: 40px;
-  width: 320px;
+  max-width: 320px;
   padding: 20px 30px;
+  margin: 20px;
 }
 
 .instagram-header {

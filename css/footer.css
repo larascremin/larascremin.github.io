@@ -27,17 +27,6 @@ footer {
   margin: 10px 0px 0px 60px;
 }
 
-.curriculum p::before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 40px;
-  width: 34px;
-  height: 30px;
-  background-image: url("../assets/arrow2.svg");
-  background-size: cover;
-}
-
 .contact {
   position: relative;
   text-align: left;
@@ -51,16 +40,6 @@ footer {
   margin-bottom: 10px;
 }
 
-.contact h2::before {
-  content: "";
-  position: absolute;
-  left: 160px;
-  width: 26px;
-  height: 30px;
-  background-image: url("../assets/smile.svg");
-  background-size: cover;
-}
-
 .social img {
   width: 30px;
   margin-bottom: 20px;
@@ -68,6 +47,15 @@ footer {
 
 .rights {
   padding: 20px;
+}
+
+.contact-header {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-header img {
+  margin-top: -30px;
 }
 
 @media (max-width: 600px) {
@@ -98,24 +86,11 @@ footer {
     gap: 20px;
   }
 
-  .contact h2::before {
-    content: "";
-    position: absolute;
-    left: 70%;
-    width: 26px;
-    height: 30px;
-    background-image: url("../assets/smile.svg");
-    background-size: cover;
+  .rights {
+    font-size: 0.8rem;
   }
 
-  .curriculum p::before {
-    content: "";
-    position: absolute;
-    left: 30%;
-    top: 40px;
-    width: 34px;
-    height: 30px;
-    background-image: url("../assets/arrow2.svg");
-    background-size: cover;
+  .contact-header {
+    justify-content: center;
   }
 }

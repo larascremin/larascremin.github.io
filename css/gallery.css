@@ -141,7 +141,7 @@
     z-index: -7;
   }
   .location img {
-    width: 20px;
+    width: 10px;
   }
 
   .location {
@@ -149,10 +149,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 180px;
+    top: 170px;
     left: 20px;
     transform: rotate(-4deg);
     z-index: 20;
+  }
+
+  .gallery p {
+    font-size: 0.9rem;
   }
 
   .key {
