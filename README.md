@@ -1,18 +1,17 @@
-### MY PORTFOLIO PAGE 💻
+### 💻 MY PORTFOLIO PAGE 
 
 This is my portfolio, where I showcase my work experiences and skills. <br>
 A portfolio page serves as a digital showcase of one's work, skills, and accomplishments.
 
+Click here to take a look -> https://larascremin.github.io/
+
 ##
 
-👉 https://larascremin.github.io/
+### Development
 
-Take a look! 
-
-I designed the site in **Figma**, taking care of responsive and accessibility details. 
-For development, I used **HTML & CSS** skills for the structure and styling, 
-and I used media queries to make the site responsive to different screen sizes.
-I also used **JavaScript** for the responsive navigation menu.
+I designed the site in **Figma**, taking care of responsive and accessibility details. For development, <br>
+I used **HTML & CSS** skills for the structure and styling, and I used media queries to make the site   <br>
+responsive to different screen sizes. I also used **JavaScript** for the responsive navigation menu.
 
 Feel free to improve the website or report any issues!
 
