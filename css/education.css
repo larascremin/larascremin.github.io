@@ -17,7 +17,7 @@
 .education-box {
   display: flex;
   justify-content: space-between;
-  margin: 30px 0px 60px;
+  margin: 20px 0px 60px;
 }
 
 .education-box h6 {

@@ -16,7 +16,7 @@
 }
 
 .contact-container {
-  padding: 80px 20px;
+  padding: 60px 20px;
 }
 
 .contact-information {
@@ -24,8 +24,8 @@
   border-left: solid #f4f0ed 3px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 40px;
+  gap: 20px;
+  padding: 0 40px;
   justify-content: center;
 }
 

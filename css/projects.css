@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   height: 100vh;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 80vh;
 }
 
@@ -44,6 +44,6 @@
 
 .projects p {
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 60px;
 }

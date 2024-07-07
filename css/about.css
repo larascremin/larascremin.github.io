@@ -17,17 +17,16 @@
 }
 
 .about-container h1 {
-  margin: 80px 0px 40px;
+  margin: 60px 0px 30px;
 }
 
 .about-container p {
-  font-size: 18px;
-  padding: 0px 9vw 0px 0px;
+  padding: 0px 6vw 0px 0px;
 }
 
 .about-container button {
   margin-top: auto;
-  width: 240px;
+  width: 220px;
 }
 
 .about hr {
@@ -35,6 +34,6 @@
 }
 
 .about-img-portrait {
-  height: 70vh;
+  height: 74vh;
   margin: 0 auto;
 }
