@@ -1,0 +1,41 @@
+.hero {
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-container {
+  margin-top: -100px;
+}
+
+.hero-paragraph--firstline {
+  font-size: 2.8rem;
+  margin-top: 30px;
+  color: #1e1e1e;
+}
+
+.hero-paragraph--secondline {
+  animation: blink-caret 0.75s infinite;
+  border-right: 3px solid #1e1e1e;
+  white-space: nowrap;
+  font-size: 2.8rem;
+  display: inline-block;
+  color: #1e1e1e;
+}
+
+.gradient-container {
+  background-color: #f4f0ed;
+  margin-bottom: 40vh;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #1e1e1e;
+  }
+}

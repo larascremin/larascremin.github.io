@@ -1,0 +1,55 @@
+.education {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  margin-bottom: 80vh;
+  position: relative;
+}
+
+.education-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+  width: 70%;
+}
+
+.education-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0px 60px;
+}
+
+.education-box h6 {
+  margin: 10px 0px;
+}
+
+.education-box li {
+  width: 26vw;
+  margin-bottom: 50px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.education-box li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+}
+
+.education h1 {
+  z-index: 2;
+  position: relative;
+}
+
+.education-gradient {
+  position: absolute;
+  z-index: 1;
+  top: -40vh;
+  left: -60vh;
+  width: 120vh;
+}

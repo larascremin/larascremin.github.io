@@ -1,165 +1,50 @@
 .gallery {
-  max-width: 1120px;
-  margin: 200px auto;
-  text-align: center;
-  position: relative;
-}
-
-.gallery-title {
-  margin-bottom: 100px;
-}
-
-.gallery .frame-title {
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -4;
-}
-
-.shine1 {
-  position: absolute;
-  top: -20px;
-  left: 33%;
-  z-index: -6;
-}
-
-.shine2 {
-  position: absolute;
-  top: 10px;
-  left: 64%;
-  z-index: -7;
-}
-
-.gallery-grid {
+  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 0.6fr;
-  gap: 20px;
-  margin: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 60vh;
 }
 
-.gallery-grid img {
+.gallery-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
   filter: grayscale(100%);
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
-.gallery-grid img:hover {
+.gallery-image:hover {
   filter: grayscale(0%);
 }
 
-.grid-one {
+.one {
+  background-image: url("/assets/grid-photo.png");
+}
+
+.three {
+  grid-row: span 2;
+  background-image: url("/assets/grid-london.jpg");
+}
+
+.five {
+  background-image: url("/assets/grid-museum.jpg");
+}
+
+.seven {
+  background-image: url("/assets/grid-interact.jpg");
+}
+
+.six {
+  grid-column: span 2;
+  background-image: url("/assets/grid-reuni.jpg");
   grid-row: span 2;
 }
 
-.grid-two {
+.ten {
   grid-column: span 2;
-}
-
-.gallery .comment {
-  margin: 0px 20px -10px;
-  text-align: end;
-}
-
-.location {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  top: 250px;
-  left: 60px;
-  transform: rotate(-4deg);
-  z-index: 20;
-}
-
-.key {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin: 20px;
-}
-
-.key img {
-  width: 32%;
-}
-
-.key .comment {
-  transform: rotate(-2deg);
-  margin: 10px 60px;
-}
-
-@media (max-width: 900px) {
-  .shine1 {
-    position: absolute;
-    top: -20px;
-    left: 28%;
-    z-index: -6;
-  }
-
-  .shine2 {
-    position: absolute;
-    top: 10px;
-    left: 70%;
-    z-index: -7;
-  }
-
-  .location {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    top: 200px;
-    left: 30px;
-    transform: rotate(-4deg);
-    z-index: 20;
-  }
-
-  .gallery .comment {
-    margin: 10px 20px -10px;
-    text-align: end;
-  }
-}
-
-@media (max-width: 700px) {
-  .gallery-grid {
-    gap: 10px;
-    margin: 10px 20px;
-  }
-  .shine1 {
-    position: absolute;
-    top: -20px;
-    left: 18%;
-    z-index: -6;
-  }
-
-  .shine2 {
-    position: absolute;
-    top: 10px;
-    left: 78%;
-    z-index: -7;
-  }
-  .location img {
-    width: 10px;
-  }
-
-  .location {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 170px;
-    left: 20px;
-    transform: rotate(-4deg);
-    z-index: 20;
-  }
-
-  .gallery p {
-    font-size: 0.9rem;
-  }
-
-  .key {
-    margin: 0px 20px;
-  }
+  background-image: url("/assets/grid-techday.jpg");
 }

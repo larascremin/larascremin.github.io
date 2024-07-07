@@ -1,96 +1,39 @@
-footer {
-  margin-top: 300px;
-  background-color: #313131;
-  text-align: center;
-}
-
-.footer {
-  max-width: 1120px;
-  margin: 0px auto;
-  padding: 80px 20px 40px;
+.contact {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   justify-content: space-between;
 }
 
-.footer button {
-  height: 50px;
-  font-size: 16px;
+.contact h1 {
+  margin-bottom: 80px;
+  line-height: 1;
 }
 
-.curriculum {
-  position: relative;
-
-  text-align: left;
+.contact button {
+  margin-right: 20px;
 }
 
-.curriculum p {
-  margin: 10px 0px 0px 60px;
+.contact-container {
+  padding: 80px 20px;
 }
 
-.contact {
-  position: relative;
-  text-align: left;
-}
-
-.contact h2 {
-  margin-bottom: 30px;
-}
-
-.contact p {
-  margin-bottom: 10px;
-}
-
-.social img {
-  width: 30px;
-  margin-bottom: 20px;
-}
-
-.rights {
-  padding: 20px;
-}
-
-.contact-header {
+.contact-information {
+  width: 10%;
+  border-left: solid #f4f0ed 3px;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  justify-content: center;
 }
 
-.contact-header img {
-  margin-top: -30px;
+.contact-information a {
+  cursor: pointer;
 }
 
-@media (max-width: 600px) {
-  .footer {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    gap: 60px;
-  }
-
-  .contact,
-  .curriculum {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .curriculum button {
-    width: 220px;
-    align-self: center;
-  }
-
-  .social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .rights {
-    font-size: 0.8rem;
-  }
-
-  .contact-header {
-    justify-content: center;
-  }
+.footer-title {
+  text-align: center;
+  padding: 20px;
 }

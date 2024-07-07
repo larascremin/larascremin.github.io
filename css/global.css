@@ -1,0 +1,83 @@
+body {
+  background-color: #101010;
+  color: #f4f0ed;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Geist", sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 6.5rem;
+  line-height: 0.8;
+  letter-spacing: -4px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h6 {
+  font-size: 20px;
+  font-weight: 200;
+  color: #a7a7a7;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.2s;
+  color: inherit;
+}
+
+hr {
+  height: 1px;
+  background-color: #f4f0ed;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-size: 22px;
+  color: #f4f0ed;
+  background-color: transparent;
+  padding: 16px 40px;
+  border-radius: 40px;
+  border: solid #f4f0ed 2px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: 0.2s;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+}
+
+button:hover {
+  background-color: #f4f0ed;
+  color: #101010;
+}
+
+.green-span {
+  color: #0bd875;
+}

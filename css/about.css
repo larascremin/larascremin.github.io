@@ -1,0 +1,40 @@
+.about {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 20px;
+  margin-bottom: 80vh;
+  align-items: center;
+  gap: 80px;
+}
+
+.about-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-container h1 {
+  margin: 80px 0px 40px;
+}
+
+.about-container p {
+  font-size: 18px;
+  padding: 0px 9vw 0px 0px;
+}
+
+.about-container button {
+  margin-top: auto;
+  width: 240px;
+}
+
+.about hr {
+  width: 140%;
+}
+
+.about-img-portrait {
+  height: 70vh;
+  margin: 0 auto;
+}
