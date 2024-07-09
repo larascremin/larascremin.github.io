@@ -51,7 +51,6 @@
 
 @media (max-width: 800px) {
   .gallery {
-    background-color: red;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
