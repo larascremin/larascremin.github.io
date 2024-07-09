@@ -35,7 +35,7 @@
 }
 
 .seven {
-  background-image: url("/assets/grid-interact.jpg");
+  background-image: url("/assets/grid-polen.jpg");
 }
 
 .six {
@@ -47,4 +47,11 @@
 .ten {
   grid-column: span 2;
   background-image: url("/assets/grid-techday.jpg");
+}
+
+@media (max-width: 800px) {
+  .gallery {
+    background-color: red;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

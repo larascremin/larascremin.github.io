@@ -33,7 +33,26 @@
   cursor: pointer;
 }
 
+.contact-information a:hover svg path {
+  fill: #0bd875;
+}
+
 .footer-title {
   text-align: center;
   padding: 20px;
+}
+
+@media (max-width: 800px) {
+  .contact-information {
+    padding: 0 20px;
+    width: 6%;
+  }
+
+  .contact-container {
+    padding: 40px 0px;
+  }
+
+  .contact button {
+    margin-bottom: 20px;
+  }
 }

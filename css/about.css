@@ -1,5 +1,5 @@
 .about {
-  max-width: 80%;
+  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -7,7 +7,7 @@
   padding: 0 20px;
   margin-bottom: 80vh;
   align-items: center;
-  gap: 80px;
+  gap: 5vw;
 }
 
 .about-container {
@@ -36,4 +36,21 @@
 .about-img-portrait {
   height: 74vh;
   margin: 0 auto;
+}
+
+@media (max-width: 1050px) {
+  .about-container p {
+    padding: 0px 0px 0px 0px;
+  }
+}
+
+@media (max-width: 850px) {
+  .about {
+    grid-template-columns: 1fr;
+    max-width: 80%;
+  }
+
+  .about-container p {
+    padding: 0px 0px 40px 0px;
+  }
 }

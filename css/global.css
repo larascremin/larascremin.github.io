@@ -81,3 +81,24 @@ button:hover {
 .green-span {
   color: #0bd875;
 }
+
+@media (max-width: 1050px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 800px) {
+  p {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 12px 36px;
+    font-size: 16px;
+  }
+}

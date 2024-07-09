@@ -43,3 +43,10 @@
 .hero-container-img {
   height: 14vh;
 }
+
+@media (max-width: 800px) {
+  .hero-paragraph--firstline,
+  .hero-paragraph--secondline {
+    font-size: 1.5rem;
+  }
+}
