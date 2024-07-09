@@ -72,7 +72,7 @@
   }
 
   .education-box li {
-    width: 30vw;
+    padding-left: 20px;
   }
 
   .education-box li::before {
