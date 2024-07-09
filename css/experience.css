@@ -87,8 +87,16 @@
 }
 
 @media (max-width: 800px) {
+  .experience hr {
+    width: calc(100% + 20px);
+  }
+
+  .experience {
+    margin-bottom: 40vh;
+  }
+
   .experience-container {
-    width: 80%;
+    width: 70%;
   }
   .experience-box-envelop {
     flex-direction: column;
@@ -110,5 +118,6 @@
 
   .experience-gradient {
     left: -55%;
+    top: -25%;
   }
 }

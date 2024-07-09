@@ -1,13 +1,12 @@
 .about {
-  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0 20px;
+  padding: 100px 20px 0px;
   margin-bottom: 80vh;
   align-items: center;
-  gap: 5vw;
+  gap: 40px;
 }
 
 .about-container {
@@ -21,7 +20,7 @@
 }
 
 .about-container p {
-  padding: 0px 6vw 0px 0px;
+  padding: 0px 10vw 0px 0px;
 }
 
 .about-container button {
@@ -30,7 +29,7 @@
 }
 
 .about hr {
-  width: 140%;
+  width: calc(100% + 20px);
 }
 
 .about-img-portrait {
@@ -47,10 +46,15 @@
 @media (max-width: 850px) {
   .about {
     grid-template-columns: 1fr;
-    max-width: 80%;
+    padding: 40px;
+    margin-bottom: 40vh;
   }
 
   .about-container p {
     padding: 0px 0px 40px 0px;
+  }
+
+  .about hr {
+    width: calc(100% + 40px);
   }
 }

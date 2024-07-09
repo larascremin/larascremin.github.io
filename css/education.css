@@ -10,7 +10,7 @@
 .education-container {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 300px;
+  margin-top: 200px;
   width: 70%;
 }
 
@@ -66,6 +66,10 @@
 }
 
 @media (max-width: 800px) {
+  .education {
+    margin-bottom: 60vh;
+  }
+
   .education-container {
     margin-top: 150px;
     width: 90%;
@@ -73,6 +77,7 @@
 
   .education-box li {
     padding-left: 20px;
+    width: 40vw;
   }
 
   .education-box li::before {
@@ -86,7 +91,7 @@
   }
 
   .education-gradient {
-    top: -10%;
+    top: -03%;
     left: -50%;
   }
 }

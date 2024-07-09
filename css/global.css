@@ -29,7 +29,7 @@ h3 {
 }
 
 h6 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 200;
   color: #a7a7a7;
 }
@@ -97,8 +97,16 @@ button:hover {
     font-size: 14px;
   }
 
+  .green-span {
+    margin-left: 4px;
+  }
+
   button {
     padding: 12px 36px;
     font-size: 16px;
+  }
+
+  h6 {
+    font-size: 14px;
   }
 }

@@ -51,7 +51,8 @@
   .projects {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    margin-top: 200vh;
+    margin-top: 140vh;
+    margin-bottom: 60vh;
   }
 
   .projects p {

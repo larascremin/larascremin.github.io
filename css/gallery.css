@@ -51,6 +51,8 @@
 
 @media (max-width: 800px) {
   .gallery {
-    grid-template-columns: 1fr 1fr 1fr;
+    height: 30vh;
+    margin-bottom: 0vh;
+    gap: 2px;
   }
 }

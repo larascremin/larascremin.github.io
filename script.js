@@ -26,3 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+function adjustTitle() {
+  const title = document.getElementById("title");
+  if (window.innerWidth < 800) {
+    title.innerHTML = "EXTRA<br>CURRICULAR";
+  } else {
+    title.innerHTML = "EXTRACURRICULAR";
+  }
+}
+
+// Ajustar o título quando a página carregar
+window.onload = adjustTitle;
+
+// Ajustar o título quando a janela for redimensionada
+window.onresize = adjustTitle;
