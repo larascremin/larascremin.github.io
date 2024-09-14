@@ -22,7 +22,7 @@
 }
 
 .one {
-  background-image: url("/assets/grid-photo.png");
+  background-image: url("/assets/grid-polen.jpg");
 }
 
 .three {
@@ -30,12 +30,16 @@
   background-image: url("/assets/grid-london.jpg");
 }
 
+.four {
+  background-image: url("/assets/techday.jpg");
+}
+
 .five {
-  background-image: url("/assets/grid-museum.jpg");
+  background-image: url("/assets/grid-photo.png");
 }
 
 .seven {
-  background-image: url("/assets/grid-polen.jpg");
+  background-image: url("/assets/grid-museum.jpg");
 }
 
 .six {
