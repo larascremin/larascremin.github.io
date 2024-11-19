@@ -47,7 +47,11 @@
   .about {
     grid-template-columns: 1fr;
     padding: 40px;
-    margin-bottom: 40vh;
+    margin-bottom: 30vh;
+  }
+
+  .about-img-portrait {
+    height: 50vh;
   }
 
   .about-container p {

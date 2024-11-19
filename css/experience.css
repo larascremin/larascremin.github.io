@@ -19,7 +19,7 @@
 
 .experience h1 {
   margin-bottom: 200px;
-  z-index: 2;
+  z-index: 40;
   position: relative;
 }
 
@@ -57,7 +57,7 @@
 
 .experience-gradient {
   position: absolute;
-  z-index: 1;
+  z-index: 30;
   top: -40%;
   left: -33%;
   width: 120vh;
@@ -88,7 +88,7 @@
 
 @media (max-width: 800px) {
   .experience hr {
-    width: calc(100% + 20px);
+    width: calc(100%);
   }
 
   .experience {
@@ -96,7 +96,7 @@
   }
 
   .experience-container {
-    width: 70%;
+    width: 100%;
   }
   .experience-box-envelop {
     flex-direction: column;
@@ -108,7 +108,8 @@
   }
 
   .experience-box {
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .experience-box-link {

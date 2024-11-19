@@ -31,6 +31,7 @@
 
 .contact-information a {
   cursor: pointer;
+  width: 40px;
 }
 
 .contact-information a:hover svg path {

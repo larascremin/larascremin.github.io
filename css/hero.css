@@ -28,6 +28,10 @@
 .gradient-container {
   background-color: #f4f0ed;
   margin-bottom: 40vh;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 }
 
 @keyframes blink-caret {
