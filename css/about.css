@@ -3,8 +3,8 @@
   margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 100px 20px 0px;
-  margin-bottom: 80vh;
+  padding: 160px 20px 0px;
+  margin-bottom: 70vh;
   align-items: center;
   gap: 40px;
 }

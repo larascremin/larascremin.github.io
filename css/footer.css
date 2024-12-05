@@ -36,6 +36,7 @@
 
 .contact-information a:hover svg path {
   fill: #0bd875;
+  transition: 0.3s;
 }
 
 .footer-title {
