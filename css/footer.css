@@ -21,7 +21,7 @@
 
 .contact-information {
   width: 10%;
-  border-left: solid #f4f0ed 3px;
+  border-left: solid #f4f0ed 1.5px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -47,7 +47,7 @@
 @media (max-width: 800px) {
   .contact-information {
     padding: 0px 20px;
-    width: 6%;
+    width: 15%;
   }
 
   .contact-container {

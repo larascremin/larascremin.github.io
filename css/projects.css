@@ -27,7 +27,7 @@
 }
 
 .baroque {
-  background-image: url("/assets/display-baroque.png");
+  background-image: url("/assets/display-gallery.png");
 }
 
 .inovamente {
@@ -62,7 +62,7 @@
 
 @media (max-width: 600px) {
   .projects {
-    margin-top: 100vh;
+    margin-top: 120vh;
     margin-bottom: 40vh;
   }
 }

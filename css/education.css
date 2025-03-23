@@ -67,22 +67,27 @@
 
 @media (max-width: 800px) {
   .education {
-    margin-bottom: 60vh;
+    margin-bottom: 40vh;
+    padding: 0px;
   }
 
   .education-container {
     margin-top: 150px;
-    width: 90%;
+    width: 100%;
   }
 
   .education-box li {
     padding-left: 20px;
-    width: 40vw;
+    width: 50vw;
   }
 
   .education-box li::before {
     width: 8px;
     height: 8px;
+  }
+
+  .education h1 {
+    margin-left: 20px;
   }
 
   .education h3 {
