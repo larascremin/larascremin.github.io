@@ -25,6 +25,10 @@
   background-image: url("/assets/grid-polen.jpg");
 }
 
+.two {
+  background-image: url("/assets/grid-acafe.jpg");
+}
+
 .three {
   grid-row: span 2;
   background-image: url("/assets/grid-london.jpg");
@@ -46,6 +50,14 @@
   grid-column: span 2;
   background-image: url("/assets/grid-reuni.jpg");
   grid-row: span 2;
+}
+
+.eight {
+  background-image: url("/assets/grid-premio.jpg");
+}
+
+.nine {
+  background-image: url("/assets/grid-turma.jpg");
 }
 
 .ten {
