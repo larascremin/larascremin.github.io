@@ -1,0 +1,167 @@
+.design {
+  padding: 300px 0px;
+}
+
+.design,
+.design-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.wrap-colors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.wrap-design {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrap-design h3 {
+  background-color: var(--green);
+  display: inline-block;
+  padding: 0px 4px;
+  margin-bottom: 60px;
+}
+
+.color {
+  border: 1px solid var(--black);
+  border-radius: 20px;
+  margin-bottom: -1px;
+  padding: 20px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.c-black {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.c-gray {
+  background-color: var(--gray);
+}
+
+.c-white {
+  background-color: var(--white);
+}
+
+.c-purple {
+  color: var(--white);
+  background-color: var(--purple);
+}
+
+.c-green {
+  color: var(--black);
+  background-color: var(--green);
+}
+
+.color-name {
+  font-weight: 700;
+}
+
+.color-code {
+  font-weight: 200;
+  font-size: 0.8rem;
+}
+
+.gap {
+  grid-row: span 5;
+}
+
+.icons-env {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fonts-env {
+  display: flex;
+  gap: 20px;
+}
+
+.font {
+  font-size: 4rem;
+  color: var(--gray);
+}
+
+.f-thin {
+  font-weight: 200;
+}
+
+.f-reg {
+  font-weight: 400;
+}
+
+.f-bold {
+  font-weight: 700;
+}
+
+.design-intro {
+  margin-top: 20px;
+  margin-bottom: auto;
+}
+
+.wrap-icons-env {
+  display: flex;
+  gap: 20px;
+}
+
+.wrap-fonts-env {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .design {
+    padding: 200px 20px;
+  }
+
+  .design,
+  .design-content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .wrap-design h3 {
+    margin-bottom: 20px;
+    margin-top: 60px;
+  }
+
+  .font {
+    font-size: 3rem;
+  }
+
+  .fonts-env {
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .icons-env svg {
+    height: 50px;
+  }
+
+  .wrap-icons-env {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .gap {
+    display: none;
+  }
+
+  .wrap-colors {
+    grid-template-columns: 1fr;
+  }
+
+  .color {
+    border-radius: 10px;
+    height: 60px;
+  }
+}

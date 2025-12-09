@@ -1,102 +1,70 @@
 .education {
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  margin-bottom: 60vh;
-  position: relative;
+  padding: 500px 0px 300px;
 }
 
-.education-container {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 200px;
-  width: 70%;
-}
-
-.education-box {
+.education-title {
   display: flex;
+  gap: 20px;
   justify-content: space-between;
-  margin: 20px 0px 60px;
+  align-items: center;
 }
 
-.education-box h6 {
-  margin: 10px 0px;
-}
-
-.education-box li {
-  width: 32vw;
-  margin-bottom: 50px;
-  position: relative;
-  padding-left: 100px;
-}
-
-.education-box li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 4px;
-  width: 12px;
-  height: 12px;
-  background-color: white;
+.education-title img {
+  width: 65%;
 }
 
 .education h1 {
-  z-index: 20;
-  position: relative;
+  text-align: right;
 }
 
-.education-gradient {
-  position: absolute;
-  z-index: 10;
-  top: -40vh;
-  left: -60vh;
-  width: 120vh;
+.education-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px 60px;
+  padding: 200px 0px;
+  align-items: start;
 }
 
-@media (max-width: 1000px) {
-  .education-container {
-    margin-top: 150px;
-    width: 80%;
-  }
-
-  .education-box li {
-    padding-left: 40px;
-  }
+.box-education {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
-@media (max-width: 800px) {
+.wrap-subtopics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.wrap-subtopics hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid var(--gray);
+}
+
+.wrap-education h6 {
+  margin: 6px 0px;
+}
+
+@media (max-width: 768px) {
   .education {
-    margin-bottom: 40vh;
-    padding: 0px;
+    padding: 200px 20px;
   }
 
-  .education-container {
-    margin-top: 150px;
-    width: 100%;
+  .education-content {
+    grid-template-columns: 1fr;
+    gap: 60px 0px;
+    padding: 100px 0px;
+    align-items: start;
   }
 
-  .education-box li {
-    padding-left: 20px;
-    width: 50vw;
+  .education-title img {
+    display: none;
   }
 
-  .education-box li::before {
-    width: 8px;
-    height: 8px;
-  }
-
-  .education h1 {
-    margin-left: 20px;
-  }
-
-  .education h3 {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  .education-gradient {
-    top: -03%;
-    left: -50%;
+  .wrap-subtopics {
+    gap: 20px;
   }
 }

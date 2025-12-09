@@ -1,9 +1,153 @@
-@import url("/css/global.css");
-@import url("/css/header.css");
 @import url("/css/hero.css");
 @import url("/css/about.css");
 @import url("/css/experience.css");
-@import url("/css/projects.css");
+@import url("/css/project.css");
 @import url("/css/education.css");
-@import url("/css/gallery.css");
+@import url("/css/album.css");
+@import url("/css/design.css");
 @import url("/css/footer.css");
+
+/* fonts */
+@font-face {
+  font-family: "bricolage-grotesque";
+  src: url("../assets/fonts/BricolageGrotesque-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bricolage-grotesque";
+  src: url("../assets/fonts/BricolageGrotesque-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bricolage-grotesque";
+  src: url("../assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bricolage-grotesque";
+  src: url("../assets/fonts/BricolageGrotesque-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bricolage-grotesque";
+  src: url("../assets/fonts/BricolageGrotesque-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bricolage-grotesque";
+  src: url("../assets/fonts/BricolageGrotesque-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* variables */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --gray: #9c9c9c;
+  --purple: #6b3bf6;
+  --green: #c4e456;
+}
+
+/* default */
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "bricolage-grotesque", sans-serif;
+  background-color: var(--white);
+}
+
+h2,
+h1,
+h3,
+h6,
+p,
+ul,
+a {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3.125rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h6 {
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: var(--gray);
+}
+
+p {
+  font-weight: 300;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 200;
+}
+
+span {
+  color: var(--purple);
+}
+
+.s-gray {
+  color: var(--gray);
+}
+
+.std-button {
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-radius: 100px;
+  padding: 12px 40px;
+  font-size: 1rem;
+  color: var(--white);
+  transition: 0.2s;
+  font-weight: 200;
+}
+
+.std-button:hover {
+  color: var(--black);
+  background-color: var(--green);
+  border: 1px solid var(--green);
+  transition: 0.2s;
+}
+
+.hero,
+.about-env,
+.experience-env,
+.education,
+.project,
+.album-env,
+.design,
+.footer-env {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
