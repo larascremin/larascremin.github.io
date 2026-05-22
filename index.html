@@ -1,328 +1,785 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio / Lara Scremin / 2026</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="icon" type="image/svg" href="./assets/images/experience-img-01.svg" />
+    <title>Lara Scremin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 18px;
+      }
+
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: #000;
+        color: #fff;
+        font-family: "Space Mono", monospace;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── BRUTAL GRID ── */
+      .grid {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 56fr 44fr;
+        grid-template-rows: 64fr 36fr;
+      }
+
+      .cell {
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* white borders — GoL spans full right column */
+      .cell-name {
+        border-bottom: 1px solid #fff;
+      }
+      .cell-gol {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        border-left: 1px solid #fff;
+      }
+      .cell-nav {
+      }
+
+      /* ── CELL 1 — NAME ── */
+      .cell-name {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(1.2rem, 2.2vw, 2.2rem);
+      }
+
+      .domain {
+        font-size: clamp(9px, 0.85vw, 12px);
+        color: #383838;
+        letter-spacing: 0.1em;
+      }
+
+      h1 {
+        font-size: clamp(3.5rem, 9.5vw, 10rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.025em;
+        line-height: 0.9;
+        color: #fff;
+        /* slightly push left for brutalist tension */
+        margin-left: -0.03em;
+      }
+
+      .name-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .role {
+        font-size: clamp(9px, 0.85vw, 12px);
+        color: #636363;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .tagline {
+        font-size: clamp(9px, 0.75vw, 11px);
+        color: #636363;
+        letter-spacing: 0.06em;
+        text-align: right;
+        background: none;
+        border: none;
+        font-family: "Space Mono", monospace;
+        cursor: pointer;
+        padding: 0;
+        transition: color 0.2s;
+      }
+      .tagline:hover {
+        color: #fff;
+      }
+
+      /* ── CELL 2 — GAME OF LIFE ── */
+      .cell-gol {
+        background: #000;
+      }
+
+      #gol-canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+        image-rendering: pixelated;
+      }
+
+      .gol-meta {
+        position: absolute;
+        bottom: 0.6rem;
+        right: 0.8rem;
+        font-size: 8px;
+        color: #383838;
+        letter-spacing: 0.1em;
+        pointer-events: none;
+        line-height: 1.8;
+        text-align: right;
+      }
+
+      /* ── CELL 3 — NAV + CONTENT ── */
+      .cell-nav {
+        display: flex;
+        flex-direction: column;
+        padding: clamp(0.9rem, 1.8vw, 1.8rem);
+        gap: 0.8rem;
+      }
+
+      .nav-row {
+        display: flex;
+        gap: 0;
+        padding-bottom: 0.7rem;
+        border-bottom: 1px solid #111;
+        flex-shrink: 0;
+      }
+
+      .nav-btn {
+        background: none;
+        border: none;
+        border-right: 1px solid #1c1c1c;
+        font-family: "Space Mono", monospace;
+        font-size: clamp(9px, 0.82vw, 11px);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #383838;
+        cursor: pointer;
+        padding: 0.2em 1.4em;
+        transition: color 0.15s;
+      }
+      .nav-btn:first-child {
+        padding-left: 0;
+      }
+      .nav-btn:last-child {
+        border-right: none;
+      }
+      .nav-btn.active {
+        color: #fff;
+      }
+      .nav-btn.active::before {
+        content: "◼ ";
+      }
+      .nav-btn:hover:not(.active) {
+        color: #636363;
+      }
+
+      .content-area {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .panel {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .panel.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Stack */
+      .stack-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        align-content: flex-start;
+      }
+      .s-tag {
+        font-size: clamp(8px, 0.78vw, 10px);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border: 1px solid #1c1c1c;
+        color: #636363;
+        padding: 0.3em 0.65em;
+        cursor: default;
+        transition:
+          border-color 0.18s,
+          color 0.18s;
+      }
+      .s-tag:hover {
+        border-color: #fff;
+        color: #fff;
+      }
+
+      /* Work */
+      .work-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr auto;
+        font-size: clamp(8px, 0.8vw, 11px);
+        align-content: start;
+      }
+      .w-row {
+        display: contents;
+      }
+      .w-co,
+      .w-role,
+      .w-date {
+        border-bottom: 1px solid #0e0e0e;
+        padding: 0.5rem 0;
+        align-self: center;
+      }
+      .w-co,
+      .w-role {
+        padding-right: 0.5rem;
+      }
+      .w-co {
+        font-weight: 500;
+        color: #fff;
+        letter-spacing: 0.03em;
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+      }
+      .w-arrow {
+        color: #636363;
+        opacity: 0;
+        transition: opacity 0.15s;
+        font-weight: 400;
+      }
+      .w-row:has(:hover) .w-arrow {
+        opacity: 1;
+      }
+      .w-co,
+      .w-role,
+      .w-date {
+        cursor: pointer;
+      }
+      .w-role {
+        color: #636363;
+      }
+      .w-date {
+        color: #636363;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      /* Awards */
+      .a-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        border-bottom: 1px solid #0e0e0e;
+        padding: 0.5rem 0;
+        font-size: clamp(8px, 0.8vw, 11px);
+      }
+      .a-name {
+        color: #636363;
+        flex: 1;
+      }
+      .a-year {
+        color: #383838;
+        white-space: nowrap;
+      }
+
+      /* contact links inside nav panel */
+      .c-lnk {
+        display: flex;
+        align-items: center;
+        gap: 0.7em;
+        text-decoration: none;
+        color: #636363;
+        font-size: clamp(9px, 0.9vw, 12px);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.55rem 0;
+        border-bottom: 1px solid #0e0e0e;
+        transition: color 0.2s;
+      }
+      .c-lnk:hover {
+        color: #fff;
+      }
+      .c-lnk:hover .px {
+        fill: #fff;
+      }
+      .px {
+        fill: #636363;
+        transition: fill 0.2s;
+      }
+      .c-lnk svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
+      /* glitch flash on hover for name cell */
+      .cell-name:hover h1 {
+        animation: glitch 0.15s steps(1) forwards;
+      }
+      @keyframes glitch {
+        0% {
+          text-shadow:
+            -2px 0 #fff,
+            2px 0 #fff;
+        }
+        33% {
+          text-shadow:
+            2px 0 #fff,
+            -3px 0 #fff;
+          clip-path: inset(30% 0 50% 0);
+        }
+        66% {
+          text-shadow: -2px 0 #fff;
+          clip-path: inset(60% 0 10% 0);
+        }
+        100% {
+          text-shadow: none;
+          clip-path: none;
+        }
+      }
+
+      /* load-in */
+      .grid {
+        animation: appear 0.6s ease both;
+      }
+      @keyframes appear {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* ── MOBILE ── */
+      @media (max-width: 768px) {
+        html {
+          font-size: 24px;
+        }
+
+        .gol-meta {
+          display: none;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto minmax(0, 22vh) 1fr;
+          height: 100vh;
+        }
+
+        /* reset all desktop placements */
+        .cell-name {
+          grid-column: 1;
+          grid-row: 1;
+          border-right: none;
+          border-bottom: 1px solid #fff;
+        }
+        .cell-gol {
+          grid-column: 1;
+          grid-row: 2;
+          border-left: none;
+          border-top: none;
+          border-bottom: 1px solid #fff;
+        }
+        .cell-nav {
+          grid-column: 1;
+          grid-row: 3;
+          border-right: none;
+        }
+
+        h1 {
+          font-size: clamp(2.4rem, 13vw, 3.8rem);
+        }
+
+        .cell-name {
+          padding: 1.2rem 1rem 1rem;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: flex-end;
+          gap: 0.8rem;
+        }
+
+        .domain {
+          width: 100%;
+          margin-bottom: 0;
+        }
+
+        h1 {
+          flex: 1 0 100%;
+        }
+
+        .name-meta {
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .cell-nav {
+          padding: 1rem 1rem 1.4rem;
+          overflow: hidden;
+        }
+
+        .nav-btn {
+          font-size: 0.52rem;
+          padding: 0.2em 0.7em;
+        }
+
+        .work-grid {
+          grid-template-columns: auto 1fr;
+        }
+        .w-co {
+          padding-right: 0.5rem;
+        }
+        .w-role {
+          text-align: right;
+        }
+        .w-arrow,
+        .w-date {
+          display: none;
+        }
+
+        .role,
+        .tagline,
+        .domain {
+          font-size: 0.52rem;
+        }
+
+        .s-tag {
+          font-size: 0.5rem;
+        }
+
+        .work-grid {
+          font-size: 0.52rem;
+        }
+
+        .a-row {
+          font-size: 0.5rem;
+        }
+        .a-year {
+          display: none;
+        }
+
+        .c-lnk {
+          font-size: 0.54rem;
+          padding: 0.7rem 0;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="hero">
-      <header>
-        <a id="header-icon" href="https://www.linkedin.com/in/lara-scremin/" target="_blank"></a>
-        <nav id="nav">
-          <button id="btn-mobile"><span id="hamburguer"></span></button>
-          <ul id="menu">
-            <li><a href="#aboutme">About Me</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#album">Album</a></li>
-            <li><a href="#design">The Design</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      <div class="hero-content">
-        <div class="line-01">
-          <h2>Hi, I'm <span>Lara Scremin</span></h2>
-          <img src="./assets/images/hero-img-01.jpg" />
-          <h2>,</h2>
-        </div>
-        <div class="line-02">
-          <h2>a Software</h2>
-          <img src="./assets/images/hero-img-02.jpg" />
-          <h2>Developer</h2>
-        </div>
-        <div class="line-03">
-          <h2>& creative & <span>can-doer :)</span></h2>
-        </div>
-        <div class="line-04">
-          <h2>based in Brazil</h2>
-          <img src="./assets/images/hero-img-03.jpg" />
+    <div class="grid">
+      <!-- ① NAME -->
+      <div class="cell cell-name">
+        <div class="domain">larascremin.dev</div>
+        <h1>LARA<br />SCREMIN</h1>
+        <div class="name-meta">
+          <div class="role">Product Engineer</div>
+          <button class="tagline" id="lets-chat">Let's chat?</button>
         </div>
       </div>
-      <div></div>
-    </div>
-    <div class="about">
-      <div class="about-env" id="aboutme">
-        <div class="profile">
-          <img src="./assets/images/about-img-01.png" />
-        </div>
-        <div class="about-content">
-          <h1>about me<span>.</span></h1>
-          <p>
-            I'm a full-stack developer and tech enthusiast who loves building digital solutions from scratch. Throughout my projects and professional experience, I've been involved in the entire
-            software development lifecycle, from requirements and prototyping to testing, deployment, and continuous system improvement. <br /><br />While front-end development and product creation
-            are areas I deeply connect with, I also bring hands-on experience in back-end development and cloud environments. I enjoy solving real problems through technology and I'm always excited to
-            start new projects!
-          </p>
-          <div class="tags">
-            <p class="tag">JAVASCRIPT</p>
-            <p class="tag">REACT JS</p>
-            <p class="tag">REACT NATIVE</p>
-            <p class="tag">NODE JS</p>
-            <p class="tag">LIGHTNING WEB APP</p>
-            <p class="tag">MONGODB</p>
-            <p class="tag">POSTGRESQL</p>
-            <p class="tag">SQL / SOQL</p>
-            <p class="tag">SPRING BOOT</p>
-            <p class="tag">JAVA</p>
-            <p class="tag">AWS</p>
-            <p class="tag">AZURE</p>
-            <p class="tag">TAILWIND</p>
-            <p class="tag">FIGMA</p>
-          </div>
+
+      <!-- ② GAME OF LIFE -->
+      <div class="cell cell-gol">
+        <canvas id="gol-canvas"></canvas>
+        <div class="gol-meta">
+          CONWAY'S GAME OF LIFE<br />
+          GEN <span id="gen-count">0</span>
         </div>
       </div>
-    </div>
-    <div class="experience">
-      <div class="experience-env" id="experience">
-        <h1>work experience<span>.</span></h1>
-        <div class="experience-content">
-          <div class="experience-button">
-            <a class="experience-link" target="_blank" href="https://mindcloud.co/"></a>
-          </div>
-          <div class="wrap-experience">
-            <h3>Technical Project Manager</h3>
-            <h6>MINDCLOUD, 2025 - PRESENT</h6>
-            <p>
-              Technical direction, QA support, code reviews, and integration structuring focused on performance and scalability. Responsible for project organization and maintenance, team
-              coordination, task distribution, and leading meetings to ensure alignment and delivery.
-            </p>
-          </div>
-          <div class="experience-button">
-            <a class="experience-link" target="_blank" href="https://mindcloud.co/"></a>
-          </div>
-          <div class="wrap-experience">
-            <h3>Integrations Developer</h3>
-            <h6>MINDCLOUD, 2025 - PRESENT</h6>
-            <p>
-              Responsible for designing, implementing, and maintaining integrations between systems and applications, using APIs, services, and automation to ensure efficient communication, high
-              performance, scalability, and security across platforms.
-            </p>
-          </div>
-          <div class="experience-button">
-            <a class="experience-link" target="_blank" href="https://www.sottama.com/"></a>
-          </div>
-          <div class="wrap-experience">
-            <h3>Full-Stack Developer</h3>
-            <h6>SOTTAMA, 2024 - 2025</h6>
-            <p>
-              Development of CRM, B2B, B2C and D2C solutions, supporting high-impact solutions for enterprise-level and multinational clients. Focused on delivering clean, maintainable code and
-              user-centered features across web and mobile platforms.
-            </p>
-          </div>
-          <div class="experience-button">
-            <a class="experience-link" target="_blank" href="https://strawplast.com.br/"></a>
-          </div>
-          <div class="wrap-experience">
-            <h3>Full-Stack Developer</h3>
-            <h6>STRAWPLAST, 2024</h6>
-            <p>
-              Primary person responsible for the development of features and maintenance of an industrial production application, integrated with a third-party ERP, participating in the entire
-              development process.
-            </p>
-          </div>
-          <div class="experience-button">
-            <a class="experience-link" target="_blank" href="https://www.eloware.com.br/"></a>
-          </div>
-          <div class="wrap-experience">
-            <h3>IT and Infraestructure</h3>
-            <h6>ELOWARE, 2022 - 2024</h6>
-            <p>
-              Expert management and monitoring of physical and digital networks, providing direct technical support and utilizing organizational administration tools, ensuring system availability and
-              security. Responsible for information security and network protection.
-            </p>
-          </div>
+
+      <!-- ③ NAV + CONTENT -->
+      <div class="cell cell-nav">
+        <div class="nav-row">
+          <button class="nav-btn active" data-panel="stack">Stack</button>
+          <button class="nav-btn" data-panel="work">Work</button>
+          <button class="nav-btn" data-panel="awards">Awards</button>
+          <button class="nav-btn" data-panel="contact">Contact</button>
         </div>
-      </div>
-    </div>
-    <div class="project">
-      <div class="project-content">
-        <h3>
-          Take a look on my latest<br />
-          project on <span class="s-gray">github :D</span>
-        </h3>
-        <a class="std-button" href="https://github.com/larascremin/space-invaders" target="_blank">CHECK IT OUT →</a>
-      </div>
-    </div>
-    <div class="education" id="education">
-      <div class="education-title">
-        <img src="./assets/images/education-img-01.svg" />
-        <h1>education<span>.</span></h1>
-      </div>
-      <div class="education-content">
-        <div class="wrap-subtopics">
-          <h3>Academic Background</h3>
-          <hr />
-        </div>
-        <div class="box-education">
-          <div class="wrap-education">
-            <h6>2023 - 2026</h6>
-            <p>Bachelor's degree in Information Systems at UNIBAVE - University Center of Barriga Verde, currently in the senior year.</p>
+
+        <div class="content-area">
+          <div class="panel active" id="panel-stack">
+            <div class="stack-grid">
+              <span class="s-tag">TypeScript</span>
+              <span class="s-tag">JavaScript</span>
+              <span class="s-tag">Node.js</span>
+              <span class="s-tag">React</span>
+              <span class="s-tag">Next.js</span>
+              <span class="s-tag">Python</span>
+              <span class="s-tag">Supabase</span>
+              <span class="s-tag">GraphQL</span>
+              <span class="s-tag">PostgreSQL</span>
+              <span class="s-tag">AWS</span>
+            </div>
           </div>
-          <div class="wrap-education">
-            <h6>2019 & 2023</h6>
-            <p>Scientific Initiation in Pure and Applied Mathematics, at UFSC – Federal University of Santa Catarina.</p>
-          </div>
-        </div>
-        <div class="wrap-subtopics">
-          <h3>Certifications</h3>
-          <hr />
-        </div>
-        <div class="box-education">
-          <div class="wrap-education">
-            <h6>2025</h6>
-            <p>Microservices and APIs Fast Track Course, at The Developers Conference Floripa.</p>
-          </div>
-          <div class="wrap-education">
-            <h6>2024</h6>
-            <p>Web Development Bootcamp, at DIO, E-Learning Coding Institute.</p>
-          </div>
-          <div class="wrap-education">
-            <h6>2024</h6>
-            <p>ISO 27001:2022 Implementer Certification, at Dédalo – Information Security Intelligence</p>
-          </div>
-        </div>
-        <div class="wrap-subtopics">
-          <h3>Achievements</h3>
-          <hr />
-        </div>
-        <div class="box-education">
-          <div class="wrap-education">
-            <h6>2025</h6>
-            <p>Finalist at the REUNI Challenge for the third time, the largest university entrepreneurship competition in Brazil.</p>
-          </div>
-          <div class="wrap-education">
-            <h6>2025</h6>
-            <p>Third place in the ACAFE Challenge, for tackling one of the major educational challenges in our state.</p>
-          </div>
-          <div class="wrap-education">
-            <h6>2024</h6>
-            <p>Finalist at the REUNI Challenge for the second time, the largest university entrepreneurship competition in Brazil.</p>
-          </div>
-          <div class="wrap-education">
-            <h6>2023</h6>
-            <p>Finalist at the REUNI Challenge, the largest university entrepreneurship competition in Brazil.</p>
-          </div>
-          <div class="wrap-education">
-            <h6>2022</h6>
-            <p>Bronze medalist at the National Mathematics Olympiad (OBMEP), for the second time.</p>
-          </div>
-          <div class="wrap-education">
-            <h6>2022</h6>
-            <p>Bronze medalist at the National Mathematics Olympiad (OBMEP)</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="album" id="album">
-      <div class="album-env">
-        <div class="photo p-one"></div>
-        <div class="photo p-two"></div>
-        <div class="photo p-three"></div>
-        <div class="photo p-four"></div>
-        <div class="photo p-five"></div>
-        <div class="photo p-six"></div>
-        <div class="photo p-seven"></div>
-        <div class="photo p-eight"></div>
-        <div class="photo p-nine"></div>
-        <div class="photo p-ten"></div>
-      </div>
-    </div>
-    <div class="design" id="design">
-      <div class="wrap-design">
-        <h1>the design<span>.</span></h1>
-        <p class="design-intro">
-          Did you like the design? I made it myself! For this design, I used a modern and confident color palette. I also used my favorite font family, “Bricolage Grotesque”, a disruptive typeface
-          with many details and variations. For the icons, I’m using the Phosphor Icons collection, a broad minimalist icon pack. Some of the illustrations used on this page are images edited with a
-          “BAYER 4x4” style, creating a pixel-like effect.
-        </p>
-        <div class="design-content">
-          <div class="wrap-font">
-            <h3>Bricolage Grotesque</h3>
-            <div class="wrap-fonts-env">
-              <div class="fonts-env">
-                <p class="font f-thin">Aa</p>
-                <p class="font f-thin">Bb</p>
-                <p class="font f-thin">Cc</p>
+
+          <div class="panel" id="panel-work">
+            <div class="work-grid">
+              <div class="w-row" data-href="https://mindcloud.co/">
+                <span class="w-co">MindCloud<span class="w-arrow">[ → ]</span></span>
+                <span class="w-role">Technical Product Manager</span>
+                <span class="w-date">2025 → now</span>
               </div>
-              <div class="fonts-env">
-                <p class="font f-reg">Aa</p>
-                <p class="font f-reg">Bb</p>
-                <p class="font f-reg">Cc</p>
+              <div class="w-row" data-href="https://www.sottama.com/">
+                <span class="w-co">Sottama<span class="w-arrow">[ → ]</span></span>
+                <span class="w-role">Full-stack Developer</span>
+                <span class="w-date">2024 → 2025</span>
               </div>
-              <div class="fonts-env">
-                <p class="font f-bold">Aa</p>
-                <p class="font f-bold">Bb</p>
-                <p class="font f-bold">Cc</p>
+              <div class="w-row" data-href="https://strawplast.com.br/">
+                <span class="w-co">Strawplast<span class="w-arrow">[ → ]</span></span>
+                <span class="w-role">Full-stack Developer</span>
+                <span class="w-date">2024 → 2024</span>
+              </div>
+              <div class="w-row" data-href="https://www.eloware.com.br/">
+                <span class="w-co">Eloware<span class="w-arrow">[ → ]</span></span>
+                <span class="w-role">IT & Infrastructure</span>
+                <span class="w-date">2022 → 2024</span>
               </div>
             </div>
           </div>
-          <div class="wrap-icons">
-            <h3>Phosphor Icons</h3>
-            <div class="wrap-icons-env">
-              <div class="icons-env">
-                <div id="arrowThin"></div>
-                <div id="arrowReg"></div>
-                <div id="arrowBold"></div>
-              </div>
-              <div class="icons-env">
-                <div id="emailThin"></div>
-                <div id="emailReg"></div>
-                <div id="emailBold"></div>
-              </div>
-              <div class="icons-env">
-                <div id="coffeeThin"></div>
-                <div id="coffeeReg"></div>
-                <div id="coffeeBold"></div>
-              </div>
+
+          <div class="panel" id="panel-awards">
+            <div class="a-row">
+              <span class="a-name">Academic Research in Applied Mathematics — UFSC</span>
+              <span class="a-year">2020 & 2022</span>
             </div>
+            <div class="a-row">
+              <span class="a-name">3rd Place — Acafe Innovation Challenge</span>
+              <span class="a-year">2025</span>
+            </div>
+            <div class="a-row">
+              <span class="a-name">Two-time National Math Olympiad Medalist - OBMEP</span>
+              <span class="a-year">2019 & 2021</span>
+            </div>
+            <div class="a-row">
+              <span class="a-name">1st Place — REUNI Entrepreneurship Competition - National</span>
+              <span class="a-year">2024</span>
+            </div>
+          </div>
+
+          <div class="panel" id="panel-contact">
+            <a class="c-lnk" href="https://github.com/larascremin" target="_blank" rel="noopener">
+              <svg viewBox="0 0 12 11" width="20" height="18" xmlns="http://www.w3.org/2000/svg">
+                <rect class="px" x="3" y="0" width="6" height="1" />
+                <rect class="px" x="2" y="1" width="1" height="1" />
+                <rect class="px" x="9" y="1" width="1" height="1" />
+                <rect class="px" x="1" y="2" width="1" height="1" />
+                <rect class="px" x="4" y="2" width="1" height="1" />
+                <rect class="px" x="7" y="2" width="1" height="1" />
+                <rect class="px" x="10" y="2" width="1" height="1" />
+                <rect class="px" x="1" y="3" width="10" height="1" />
+                <rect class="px" x="1" y="4" width="1" height="1" />
+                <rect class="px" x="3" y="4" width="2" height="1" />
+                <rect class="px" x="7" y="4" width="2" height="1" />
+                <rect class="px" x="10" y="4" width="1" height="1" />
+                <rect class="px" x="1" y="5" width="10" height="1" />
+                <rect class="px" x="2" y="6" width="8" height="1" />
+                <rect class="px" x="3" y="7" width="2" height="1" />
+                <rect class="px" x="7" y="7" width="2" height="1" />
+                <rect class="px" x="3" y="8" width="1" height="1" />
+                <rect class="px" x="8" y="8" width="1" height="1" />
+                <rect class="px" x="3" y="9" width="1" height="1" />
+                <rect class="px" x="8" y="9" width="1" height="1" />
+                <rect class="px" x="4" y="10" width="1" height="1" />
+                <rect class="px" x="7" y="10" width="1" height="1" />
+              </svg>
+              Github
+            </a>
+            <a class="c-lnk" href="mailto:lscreminmendes@gmail.com">
+              <svg viewBox="0 0 12 9" width="20" height="15" xmlns="http://www.w3.org/2000/svg">
+                <rect class="px" x="0" y="0" width="12" height="1" />
+                <rect class="px" x="0" y="8" width="12" height="1" />
+                <rect class="px" x="0" y="1" width="1" height="7" />
+                <rect class="px" x="11" y="1" width="1" height="7" />
+                <rect class="px" x="1" y="1" width="1" height="1" />
+                <rect class="px" x="10" y="1" width="1" height="1" />
+                <rect class="px" x="2" y="2" width="1" height="1" />
+                <rect class="px" x="9" y="2" width="1" height="1" />
+                <rect class="px" x="3" y="3" width="1" height="1" />
+                <rect class="px" x="8" y="3" width="1" height="1" />
+                <rect class="px" x="4" y="4" width="1" height="1" />
+                <rect class="px" x="7" y="4" width="1" height="1" />
+                <rect class="px" x="5" y="5" width="2" height="1" />
+              </svg>
+              Email
+            </a>
+            <a class="c-lnk" href="https://www.linkedin.com/in/lara-scremin/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 11 11" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                <rect class="px" x="0" y="0" width="11" height="1" />
+                <rect class="px" x="0" y="10" width="11" height="1" />
+                <rect class="px" x="0" y="1" width="1" height="9" />
+                <rect class="px" x="10" y="1" width="1" height="9" />
+                <rect class="px" x="2" y="2" width="2" height="2" />
+                <rect class="px" x="2" y="5" width="2" height="4" />
+                <rect class="px" x="5" y="5" width="2" height="1" />
+                <rect class="px" x="6" y="5" width="1" height="1" />
+                <rect class="px" x="7" y="6" width="1" height="3" />
+                <rect class="px" x="5" y="6" width="2" height="3" />
+              </svg>
+              Linkedin
+            </a>
+            <a class="c-lnk" href="assets/lara.scremin.pdf" download>
+              <svg viewBox="0 0 12 12" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                <rect class="px" x="2" y="0" width="6" height="1" />
+                <rect class="px" x="1" y="1" width="1" height="1" />
+                <rect class="px" x="8" y="1" width="1" height="1" />
+                <rect class="px" x="1" y="2" width="1" height="4" />
+                <rect class="px" x="9" y="2" width="1" height="4" />
+                <rect class="px" x="2" y="1" width="6" height="1" />
+                <rect class="px" x="5" y="3" width="2" height="3" />
+                <rect class="px" x="4" y="7" width="1" height="1" />
+                <rect class="px" x="7" y="7" width="1" height="1" />
+                <rect class="px" x="3" y="8" width="6" height="1" />
+                <rect class="px" x="1" y="6" width="3" height="1" />
+                <rect class="px" x="8" y="6" width="3" height="1" />
+                <rect class="px" x="1" y="7" width="1" height="3" />
+                <rect class="px" x="10" y="7" width="1" height="3" />
+                <rect class="px" x="1" y="10" width="10" height="1" />
+              </svg>
+              Download CV
+            </a>
           </div>
         </div>
       </div>
-      <div class="wrap-colors">
-        <div class="gap"></div>
-        <div class="color c-gray">
-          <p class="color-name">GRAY</p>
-          <p class="color-code">rgb (156, 156, 156)</p>
-        </div>
-        <div class="color c-black">
-          <p class="color-name">BLACK</p>
-          <p class="color-code">rgb (0, 0, 0)</p>
-        </div>
-        <div class="color c-white">
-          <p class="color-name">WHITE</p>
-          <p class="color-code">rgb (255, 255, 255)</p>
-        </div>
-        <div class="color c-purple">
-          <p class="color-name">ROYAL PURPLE</p>
-          <p class="color-code">rgb (107, 59, 246)</p>
-        </div>
-        <div class="color c-green">
-          <p class="color-name">GREEN</p>
-          <p class="color-code">rgb (196, 228, 86)</p>
-        </div>
-      </div>
     </div>
-    <footer>
-      <div class="footer-env" id="contact">
-        <div class="wrap-footer">
-          <h1>hey you, <br />get in touch <span>;)</span></h1>
-          <a class="std-button" target="_blank" href="https://wa.me/5548996122084">LET'S CHAT →</a>
-          <a class="std-button" target="_blank" href="./assets/images/lara.scremin.pdf">DOWNLOAD MY CV →</a>
-        </div>
-        <img src="./assets/images/footer-img-01.svg" />
-        <div class="contact-icons">
-          <a class="icon" target="_blank" id="email" href="https://mail.google.com/mail/?view=cm&fs=1&to=lscreminmendes@gmail.com&su=Contact"></a>
-          <a class="icon" target="_blank" id="linkedin" href="https://www.linkedin.com/in/lara-scremin/"></a>
-          <a class="icon" target="_blank" id="github" href="https://github.com/larascremin"></a>
-          <a class="icon" target="_blank" id="whatsapp" href="https://wa.me/5548996122084"></a>
-        </div>
-      </div>
-      <h6>© 2026 LaraScremin. All rights reserved.</h6>
-    </footer>
-    <script type="module" src="script.js"></script>
+
+    <script>
+      // ── Work row links ──
+      document.querySelectorAll(".w-row[data-href]").forEach((row) => {
+        const href = row.dataset.href;
+        row.querySelectorAll(".w-co, .w-role, .w-date").forEach((cell) => {
+          cell.addEventListener("click", () => window.open(href, "_blank", "noopener"));
+        });
+      });
+
+      // ── Nav switching ──
+      function switchPanel(name) {
+        document.querySelectorAll(".nav-btn").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
+        const btn = document.querySelector(`.nav-btn[data-panel="${name}"]`);
+        if (btn) btn.classList.add("active");
+        document.getElementById("panel-" + name).classList.add("active");
+      }
+
+      document.querySelectorAll(".nav-btn").forEach((btn) => {
+        btn.addEventListener("click", () => switchPanel(btn.dataset.panel));
+      });
+
+      document.getElementById("lets-chat").addEventListener("click", () => switchPanel("contact"));
+
+      // ── Conway's Game of Life ──
+      const gc = document.getElementById("gol-canvas");
+      const gctx = gc.getContext("2d");
+      const genEl = document.getElementById("gen-count");
+      const CELL = 5;
+
+      let cols,
+        rows,
+        grid,
+        buf,
+        generation = 0;
+
+      function golResize() {
+        gc.width = gc.offsetWidth;
+        gc.height = gc.offsetHeight;
+        cols = Math.floor(gc.width / CELL);
+        rows = Math.floor(gc.height / CELL);
+        grid = new Uint8Array(cols * rows);
+        buf = new Uint8Array(cols * rows);
+        generation = 0;
+        seed(0.3);
+      }
+
+      function seed(density) {
+        for (let i = 0; i < grid.length; i++) grid[i] = Math.random() < density ? 1 : 0;
+      }
+
+      function at(x, y) {
+        return grid[((y + rows) % rows) * cols + ((x + cols) % cols)];
+      }
+
+      function step() {
+        for (let y = 0; y < rows; y++) {
+          for (let x = 0; x < cols; x++) {
+            const n = at(x - 1, y - 1) + at(x, y - 1) + at(x + 1, y - 1) + at(x - 1, y) + at(x + 1, y) + at(x - 1, y + 1) + at(x, y + 1) + at(x + 1, y + 1);
+            const a = at(x, y);
+            buf[((y + rows) % rows) * cols + ((x + cols) % cols)] = a ? (n === 2 || n === 3 ? 1 : 0) : n === 3 ? 1 : 0;
+          }
+        }
+        const tmp = grid;
+        grid = buf;
+        buf = tmp;
+        generation++;
+      }
+
+      function draw() {
+        gctx.fillStyle = "#000";
+        gctx.fillRect(0, 0, gc.width, gc.height);
+        gctx.fillStyle = "#fff";
+        for (let y = 0; y < rows; y++) {
+          for (let x = 0; x < cols; x++) {
+            if (grid[y * cols + x]) {
+              gctx.fillRect(x * CELL, y * CELL, CELL - 1, CELL - 1);
+            }
+          }
+        }
+        genEl.textContent = generation;
+      }
+
+      // Keep alive: perturb when population drops
+      let lastPerturb = 0;
+      function keepAlive(ts) {
+        if (ts - lastPerturb < 7000) return;
+        lastPerturb = ts;
+        let alive = 0;
+        for (let i = 0; i < grid.length; i++) alive += grid[i];
+        if (alive / grid.length < 0.04) {
+          seed(0.25);
+        } else {
+          // drop a small glider somewhere random
+          const ox = Math.floor(Math.random() * (cols - 10)) + 5;
+          const oy = Math.floor(Math.random() * (rows - 10)) + 5;
+          const glider = [
+            [1, 0],
+            [2, 1],
+            [0, 2],
+            [1, 2],
+            [2, 2],
+          ];
+          glider.forEach(([dx, dy]) => {
+            grid[((oy + dy) % rows) * cols + ((ox + dx) % cols)] = 1;
+          });
+        }
+      }
+
+      let lastStep = 0;
+      const FPS = 12;
+
+      function loop(ts) {
+        keepAlive(ts);
+        if (ts - lastStep > 1000 / FPS) {
+          step();
+          draw();
+          lastStep = ts;
+        }
+        requestAnimationFrame(loop);
+      }
+
+      golResize();
+      window.addEventListener("resize", golResize);
+      requestAnimationFrame(loop);
+    </script>
   </body>
 </html>
