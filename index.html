@@ -488,7 +488,7 @@
         <h1>LARA<br />SCREMIN</h1>
         <div class="name-meta">
           <div class="role">Product Engineer</div>
-          <button class="tagline" id="lets-chat">Let's chat?</button>
+          <button class="tagline" id="lets-chat">> Most recent project</button>
         </div>
       </div>
 
@@ -678,7 +678,7 @@
         btn.addEventListener("click", () => switchPanel(btn.dataset.panel));
       });
 
-      document.getElementById("lets-chat").addEventListener("click", () => switchPanel("contact"));
+      document.getElementById("lets-chat").addEventListener("click", () => window.open("https://github.com/larascremin/the-taskbox", "_blank", "noopener"));
 
       // ── Conway's Game of Life ──
       const gc = document.getElementById("gol-canvas");
